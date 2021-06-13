@@ -8,6 +8,7 @@ const SCENE_TRANSITIONER := preload("res://scenes/gamestates/scene_transitioner.
 const LEVELS := "res://scenes/levels/level%d.tscn"
 const CUTSCENES := "res://scenes/cutscenes/%s.tscn"
 
+const GRAVITY := 20.0
 
 enum STATE {
 	Menu,
@@ -22,7 +23,7 @@ enum STATE {
 
 var level: int = 0
 var state: int = STATE.Menu
-
+var gravity := GRAVITY
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)

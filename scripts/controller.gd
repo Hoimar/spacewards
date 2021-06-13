@@ -1,8 +1,7 @@
-class_name Player
-extends Node2D
+class_name Controller
+extends Node
 
-
-var _is_carrying := false
+onready var target := get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
