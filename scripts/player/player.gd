@@ -9,12 +9,17 @@ const JUMP_VELOCITY  := -300.0
 const MAX_SPEED_X    := 100.0
 const MAX_FALL_SPEED := 300.0
 
-onready var animated_sprite: AnimatedSprite = $Body/AnimatedSprite
 onready var body: Node2D = $Body
+onready var animated_sprite: AnimatedSprite = $Body/AnimatedSprite
+onready var jetpack_particles: CPUParticles2D = $Body/CPUParticles2D
 onready var fsm: Fsm = $Fsm
 
 var facing: int setget set_facing   # -1 or 1
 var velocity := Vector2.ZERO
+
+
+func _ready():
+	jetpack_particles.emitting = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -26,6 +26,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 } ]
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 1, 0.817383, 0, 1, 1, 0.254883, 0, 1 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8, 8 )
@@ -66,7 +69,6 @@ fsm_path = NodePath("../Fsm")
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="RayCastWall" type="RayCast2D" parent="Body"]
@@ -81,6 +83,23 @@ shadow_enabled = true
 position = Vector2( -9.27064, 2.88511 )
 scale = Vector2( 0.108096, 0.349653 )
 texture = ExtResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Body"]
+position = Vector2( -9.32598, 14.2142 )
+amount = 100
+lifetime = 0.5
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 2, 1 )
+direction = Vector2( 0, 1 )
+spread = 15.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 70.0
+initial_velocity_random = 0.2
+damping = 5.0
+scale_amount = 5.0
+scale_amount_random = 0.5
+color_ramp = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )

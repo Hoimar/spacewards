@@ -17,9 +17,11 @@ func _ready():
 func enter_state():
 	if boosts_count == 0:
 		fsm.set_state("Falling")
-	else:
-		boost_time = 0
-		update_boost(-1)
+		return
+	
+	boost_time = 0
+	update_boost(-1)
+	player.jetpack_particles.emitting = true
 
 
 func physics_tick(var delta: float):
@@ -28,6 +30,10 @@ func physics_tick(var delta: float):
 	if boost_time >= BOOST_DURATION:
 		fsm.set_state("Falling")
 	fsm.get_node("Walking").physics_tick(delta)
+
+
+func leave_state():
+	player.jetpack_particles.emitting = false
 
 
 func update_boost(var change: int):
