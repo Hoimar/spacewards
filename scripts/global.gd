@@ -8,7 +8,7 @@ const SCENE_TRANSITIONER := preload("res://scenes/gamestates/scene_transitioner.
 const LEVELS := "res://scenes/levels/level%d.tscn"
 const CUTSCENES := "res://scenes/cutscenes/%s.tscn"
 
-const GRAVITY := 20.0
+const GRAVITY := 30.0
 
 enum STATE {
 	Menu,

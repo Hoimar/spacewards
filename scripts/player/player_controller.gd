@@ -13,7 +13,7 @@ func _ready():
 
 
 func _process(delta):
-	if target.is_on_floor():
+	if target.is_on_floor() and fsm.state_name != "Boosting":
 		fsm.set_state("Idle")
 	target.set_facing(0)
 	if enable_key_input:
@@ -22,8 +22,11 @@ func _process(delta):
 	if fsm.state_name == "Jumping":
 		if target.is_on_ceiling():
 			target.velocity.y = 0
+			print("ceiling!")
 		if target.velocity.y >= 0:
 			fsm.set_state("Falling")
+	elif target.velocity.y > 0 and fsm.state_name != "Boosting":
+		fsm.set_state("Falling")
 
 
 func _process_input():
@@ -33,12 +36,20 @@ func _process_input():
 		walk(-1)
 	elif Input.is_action_pressed("ui_right"):
 		walk(1)
+	if Input.is_action_pressed("ui_select"):
+		boost()
 
 
 func jump():
 	fsm.set_state("Jumping")
 
 
+func boost():
+	fsm.set_state("Boosting")
+
+
 func walk(var facing: int):
 	target.set_facing(facing)
+	if fsm.state_name == "Boosting" or fsm.state_name == "Jumping":
+		return
 	fsm.set_state("Walking")

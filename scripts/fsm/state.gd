@@ -12,5 +12,9 @@ func tick(var delta: float):
 	pass
 
 
+func physics_tick(var delta: float):
+	pass
+
+
 func leave_state():
 	pass

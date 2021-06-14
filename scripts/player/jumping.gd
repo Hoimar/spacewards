@@ -6,5 +6,5 @@ func enter_state():
 		player.velocity.y = Player.JUMP_VELOCITY
 
 
-func tick(var delta: float):
-	fsm.get_node("Walking").tick(delta)
+func physics_tick(var delta: float):
+	fsm.get_node("Walking").physics_tick(delta)

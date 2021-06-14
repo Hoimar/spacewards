@@ -17,6 +17,10 @@ func _process(var delta: float):
 	state.tick(delta)
 
 
+func _physics_process(var delta: float):
+	state.physics_tick(delta)
+
+
 func set_state(var name: String):
 	if state_name == name:
 		return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -9,24 +9,25 @@
 [ext_resource path="res://scripts/player/jumping.gd" type="Script" id=7]
 [ext_resource path="res://scripts/player/falling.gd" type="Script" id=8]
 [ext_resource path="res://scripts/player/player_controller.gd" type="Script" id=9]
+[ext_resource path="res://scripts/player/boosting.gd" type="Script" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 3 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8, 8 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -53,6 +54,9 @@ script = ExtResource( 6 )
 [node name="Falling" type="Node" parent="Fsm"]
 script = ExtResource( 8 )
 
+[node name="Boosting" type="Node" parent="Fsm"]
+script = ExtResource( 10 )
+
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource( 9 )
 fsm_path = NodePath("../Fsm")
@@ -60,8 +64,9 @@ fsm_path = NodePath("../Fsm")
 [node name="Body" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
-frames = SubResource( 17 )
+frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="RayCastWall" type="RayCast2D" parent="Body"]
@@ -72,8 +77,13 @@ texture = ExtResource( 4 )
 texture_scale = 5.0
 shadow_enabled = true
 
+[node name="jetpack" type="Sprite" parent="Body"]
+position = Vector2( -9.27064, 2.88511 )
+scale = Vector2( 0.108096, 0.349653 )
+texture = ExtResource( 2 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 18 )
+shape = SubResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -67.0
