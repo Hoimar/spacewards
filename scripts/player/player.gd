@@ -3,11 +3,12 @@ extends KinematicBody2D
 
 signal carrot_consumed(crispness)
 
-const WALK_FRICTION  := 0.82
-const WALK_SPEEDUP   := 10.0
-const JUMP_VELOCITY  := -300.0
-const MAX_SPEED_X    := 100.0
-const MAX_FALL_SPEED := 300.0
+const WALK_FRICTION    := 0.82
+const WALK_SPEEDUP     := 10.0
+const WALKING_TRESHOLD := 1.0   # How slow player may be before stopping.
+const JUMP_VELOCITY    := -300.0
+const MAX_SPEED_X      := 100.0
+const MAX_FALL_SPEED   := 300.0
 
 onready var body: Node2D = $Body
 onready var animated_sprite: AnimatedSprite = $Body/AnimatedSprite
@@ -29,7 +30,7 @@ func _physics_process(delta):
 	# Slow down?
 	if facing == 0 and abs(velocity.x) > 0:
 		velocity.x *= WALK_FRICTION
-		if abs(velocity.x) < 1.0:
+		if abs(velocity.x) < WALKING_TRESHOLD:
 			velocity.x = 0
 	# Clamp velocity.
 	velocity.x = clamp(velocity.x, -MAX_SPEED_X, MAX_SPEED_X)

@@ -1,7 +1,10 @@
 extends PlayerState
 
+func enter_state():
+	player.animated_sprite.play("dying")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func tick(var delta: float):
+	if not player.animated_sprite.is_playing():
+		# TODO: Die!
+		pass

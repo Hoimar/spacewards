@@ -24,6 +24,7 @@ func _physics_process(var delta: float):
 func set_state(var name: String):
 	if state_name == name:
 		return
+	print(name)
 	for state_node in get_children():
 		if name.nocasecmp_to(state_node.name) == 0:
 			state.leave_state()

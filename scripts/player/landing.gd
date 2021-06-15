@@ -1,9 +1,19 @@
 extends PlayerState
 
+func _ready():
+	yield(fsm, "ready")
+	yield(player, "ready")
+	player.animated_sprite.connect("animation_finished", self, "anim_finished")
+
 
 func enter_state():
-	pass
+	player.animated_sprite.play("landing")
 
 
-func _physics_tick(var delta: float):
+func tick(var delta: float):
 	fsm.get_node("Walking").physics_tick(delta)
+
+
+func anim_finished():
+	if fsm.state == self:
+		fsm.set_state("Walking")

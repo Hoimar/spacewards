@@ -1,16 +1,19 @@
 extends PlayerState
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	yield(fsm, "ready")
+	yield(player, "ready")
+	player.animated_sprite.connect("animation_finished", self, "anim_finished")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func enter_state():
+	player.animated_sprite.play("hit")
+
+
+func tick(var delta: float):
+	fsm.get_node("Walking").physics_tick(delta)
+
+
+func anim_finished():
+	if fsm.state == self:
+		fsm.set_state("Idle")

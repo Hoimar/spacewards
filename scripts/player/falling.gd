@@ -2,7 +2,7 @@ extends PlayerState
 
 
 func enter_state():
-	pass
+	player.animated_sprite.play("falling")
 
 
 func physics_tick(var delta: float):

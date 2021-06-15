@@ -2,8 +2,11 @@ extends PlayerState
 
 
 func enter_state():
-	if player.is_on_floor():
-		player.velocity.y = Player.JUMP_VELOCITY
+	player.velocity.y = Player.JUMP_VELOCITY
+	if abs(player.velocity.x) > Player.WALKING_TRESHOLD:
+		player.animated_sprite.play("jump_walking")
+	else:
+		player.animated_sprite.play("jump_standing")
 
 
 func physics_tick(var delta: float):
