@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://scripts/player/falling.gd" type="Script" id=8]
 [ext_resource path="res://scripts/player/player_controller.gd" type="Script" id=9]
 [ext_resource path="res://scripts/player/boosting.gd" type="Script" id=10]
+[ext_resource path="res://scripts/player/hit.gd" type="Script" id=11]
+[ext_resource path="res://scripts/player/dying.gd" type="Script" id=12]
+[ext_resource path="res://scripts/player/landing.gd" type="Script" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -56,8 +59,17 @@ script = ExtResource( 6 )
 [node name="Falling" type="Node" parent="Fsm"]
 script = ExtResource( 8 )
 
+[node name="Landing" type="Node" parent="Fsm"]
+script = ExtResource( 13 )
+
 [node name="Boosting" type="Node" parent="Fsm"]
 script = ExtResource( 10 )
+
+[node name="Hit" type="Node" parent="Fsm"]
+script = ExtResource( 11 )
+
+[node name="Dying" type="Node" parent="Fsm"]
+script = ExtResource( 12 )
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource( 9 )
@@ -68,10 +80,8 @@ fsm_path = NodePath("../Fsm")
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
-
-[node name="RayCastWall" type="RayCast2D" parent="Body"]
-cast_to = Vector2( 10, 0 )
 
 [node name="Light2D" type="Light2D" parent="Body"]
 texture = ExtResource( 4 )

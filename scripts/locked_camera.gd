@@ -1,7 +1,7 @@
 extends Camera2D
 
 const ROOM_SIZE := Vector2(320, 200) / 2
-const DURATION := 2.0
+const DURATION := 1.5
 
 export var target_path: NodePath
 onready var target: Node2D = get_node(target_path)
@@ -23,5 +23,5 @@ func _process(var delta: float):
 		next_pos.y -= ROOM_SIZE.y * 2
 	if next_pos != global_position:
 		tween.interpolate_property(self, "global_position", global_position, \
-				next_pos, DURATION, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+				next_pos, DURATION, Tween.TRANS_QUAD, Tween.EASE_OUT)
 		tween.start()
