@@ -14,32 +14,27 @@ func _ready():
 
 func _process(delta):
 	target.set_facing(0)
+	
+	if target.is_on_floor() and fsm.state_name == "Falling":
+		fsm.set_state("Landing")
+	
 	if enable_key_input:
 		_process_input()
 	
+	if     target.velocity.y > 0 \
+	   and not target.is_on_floor() \
+	   and fsm.state_name != "Boosting" :
+		fsm.set_state("Falling")
 	
-	if fsm.state_name == "Landing":
-		return
-	
-	# Start falling if needed.
 	if fsm.state_name == "Jumping":
 		if target.is_on_ceiling():
 			target.velocity.y = 0
-		if target.velocity.y >= 0:
-			fsm.set_state("Falling")
-	elif     target.velocity.y > 0 \
-		 and fsm.state_name != "Boosting":
-		fsm.set_state("Falling")
-	
-	# Landing and idling.
-	if target.is_on_floor() \
-	   and fsm.state_name != "Boosting":
-		if fsm.state_name == "Falling":
-			fsm.set_state("Landing")
-		elif   target.facing == 0 \
-		   and fsm.state_name != "Jumping" \
-		   and target.velocity.y >= 0:
-			fsm.set_state("Idle")
+	elif     target.is_on_floor() \
+	   and target.facing == 0 \
+	   and fsm.state_name != "Boosting" \
+	   and fsm.state_name != "Landing" \
+	   and target.velocity.y >= 0:
+			fsm.set_state("Idle")   # Allowed to idle.
 
 
 func _process_input():
@@ -54,7 +49,9 @@ func _process_input():
 
 
 func jump():
-	if not target.is_on_floor() or fsm.state_name == "Boosting":
+	if    not target.is_on_floor() \
+	   or fsm.state_name == "Boosting" \
+	   or fsm.state_name == "Landing":
 		return
 	fsm.set_state("Jumping")
 
