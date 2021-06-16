@@ -34,17 +34,13 @@ position = Vector2( 320, 0 )
 [node name="Room3" parent="Rooms" instance=ExtResource( 4 )]
 position = Vector2( 320, 200 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -117.321, 49.3168 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.5, 0.5, 0.5, 1 )
-
-[node name="Camera2D" parent="." instance=ExtResource( 5 )]
-target_path = NodePath("../Player")
-
 [node name="Objects" type="Node" parent="."]
 
 [node name="Carrot" parent="Objects" instance=ExtResource( 3 )]
 position = Vector2( 176, 64 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+target_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -117.321, 49.3168 )
