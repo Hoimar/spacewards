@@ -249,41 +249,55 @@ columns = 2
 
 [node name="LabelJump" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 3.0
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 17.0
 text = "Jump:"
 
 [node name="ButtonJump" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 41.0
+margin_left = 46.0
 margin_right = 370.0
 size_flags_horizontal = 3
 action = "ui_up"
 
-[node name="LabelLeft" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+[node name="LabelBoost" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 33.0
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 47.0
-text = "Left:"
+text = "Boost:"
 
-[node name="ButtonLeft" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 41.0
+[node name="ButtonBoost" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 46.0
 margin_top = 30.0
 margin_right = 370.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
-action = "ui_left"
+action = "ui_select"
 
-[node name="LabelRight" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+[node name="LabelLeft" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 63.0
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 77.0
-text = "Right:"
+text = "Left:"
 
-[node name="ButtonRight" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 41.0
+[node name="ButtonLeft" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 46.0
 margin_top = 60.0
 margin_right = 370.0
 margin_bottom = 80.0
+size_flags_horizontal = 3
+action = "ui_left"
+
+[node name="LabelRight" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+margin_top = 93.0
+margin_right = 41.0
+margin_bottom = 107.0
+text = "Right:"
+
+[node name="ButtonRight" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 46.0
+margin_top = 90.0
+margin_right = 370.0
+margin_bottom = 110.0
 size_flags_horizontal = 3
 action = "ui_right"
 

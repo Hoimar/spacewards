@@ -38,15 +38,15 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [node name="World" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -472.0
-margin_top = -266.0
-margin_right = 547.0
-margin_bottom = 378.0
-color = Color( 0.0705, 0.100975, 0.15, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+color = Color( 0.0470588, 0.0588235, 0.0745098, 1 )
+polygon = PoolVector2Array( -176, -192, 0, -144, 480, -144, 688, -64, 704, 8, 680, 176, 488, 312, 0, 312, -152, 232, -304, 40, -304, -34, -304, -96 )
+
+[node name="TileMapBackground" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 3 )

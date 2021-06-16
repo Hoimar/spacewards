@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://scripts/fsm/state.gd"
+}, {
+"base": "Node",
+"class": "Switchable",
+"language": "GDScript",
+"path": "res://scripts/objects/switchable.gd"
 } ]
 _global_script_class_icons={
 "Controller": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "Player": "",
 "PlayerController": "",
 "PlayerState": "",
-"State": ""
+"State": "",
+"Switchable": ""
 }
 
 [application]
@@ -98,5 +104,5 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0.231373, 0.243137, 0.388235, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://assets/default_env.tres"
