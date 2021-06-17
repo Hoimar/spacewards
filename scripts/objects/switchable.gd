@@ -10,3 +10,8 @@ func _ready():
 
 func switch(var active: bool):
 	self.active = active
+	on_activated()
+
+
+func on_activated():
+	pass

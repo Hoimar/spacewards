@@ -5,6 +5,7 @@ export var _target_path: NodePath
 onready var target := get_node("..")
 var state: State
 var state_name: String setget set_state
+var prev_state_name: String
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,6 +29,7 @@ func set_state(var name: String):
 		if name.nocasecmp_to(state_node.name) == 0:
 			state.leave_state()
 			state = state_node
+			prev_state_name = state_name
 			state_name = name
 			state.enter_state()
 			break

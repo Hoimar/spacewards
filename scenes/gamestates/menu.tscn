@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scripts/gamestates/menu.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ui/input_remap_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/graphics/wildcards.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
-resource_name = "transition_menu_screen"
+resource_name = "to_settings"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 2
@@ -19,22 +20,126 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 960, 0 ) ]
 }
 
-[node name="Menu" type="Node"]
+[sub_resource type="Animation" id=2]
+resource_name = "to_wildcards"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -960, 0 ) ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/transition_menu_screen = SubResource( 1 )
+anims/to_settings = SubResource( 1 )
+anims/to_wildcards = SubResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 2.0
+anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -960.0
+margin_right = 960.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContainerMain" type="Control" parent="HBoxContainer"]
+[node name="ContainerWildcards" type="Control" parent="HBoxContainer"]
 margin_right = 960.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/ContainerWildcards"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.86, 0.856417, 0.817, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ContainerWildcards"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ContainerWildcards/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 910.0
+margin_bottom = 577.0
+rect_pivot_offset = Vector2( -946.505, -100 )
+custom_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer"]
+margin_right = 860.0
+margin_bottom = 396.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="HBoxLabels" type="HBoxContainer" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer"]
+margin_top = 416.0
+margin_right = 860.0
+margin_bottom = 447.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="LabelCarrots" type="Label" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxLabels"]
+margin_left = 163.0
+margin_right = 384.0
+margin_bottom = 31.0
+text = "Collect a frozen carrot to replenish
+one jetpack boost!"
+
+[node name="LabelTime" type="Label" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxLabels"]
+margin_left = 434.0
+margin_right = 697.0
+margin_bottom = 31.0
+text = "Watch the background, you'll see the sun
+ mirror the hour hand of your local clock."
+
+[node name="HBoxButton" type="HBoxContainer" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer"]
+margin_top = 467.0
+margin_right = 860.0
+margin_bottom = 507.0
+alignment = 2
+
+[node name="ButtonBack" type="Button" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxButton"]
+margin_left = 780.0
+margin_right = 860.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 40 )
+size_flags_horizontal = 0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContainerMain" type="Control" parent="HBoxContainer"]
+margin_left = 960.0
+margin_right = 1920.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -45,7 +150,10 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/ContainerMain"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0352941, 0.054902, 0.172549, 1 )
+color = Color( 0.86, 0.856417, 0.817, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ContainerMain"]
 anchor_right = 1.0
@@ -110,21 +218,29 @@ size_flags_vertical = 0
 
 [node name="ButtonPlay" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 150.0
-margin_bottom = 30.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Play"
 
 [node name="ButtonSettings" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 34.0
+margin_top = 26.0
 margin_right = 150.0
-margin_bottom = 65.0
+margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Settings"
 
+[node name="ButtonWildcards" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 150.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Wildcard Info"
+
 [node name="ButtonExit" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 69.0
+margin_top = 78.0
 margin_right = 150.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
@@ -132,8 +248,8 @@ size_flags_vertical = 3
 text = "Exit"
 
 [node name="ContainerSettings" type="Control" parent="HBoxContainer"]
-margin_left = 960.0
-margin_right = 1920.0
+margin_left = 1920.0
+margin_right = 2880.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -144,7 +260,10 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/ContainerSettings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0352941, 0.054902, 0.172549, 1 )
+color = Color( 0.86, 0.856417, 0.817, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ContainerSettings"]
 anchor_right = 1.0
@@ -313,7 +432,9 @@ text = "Back"
 anchor_mode = 0
 current = true
 
+[connection signal="pressed" from="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxButton/ButtonBack" to="." method="_on_ButtonBack_pressed"]
 [connection signal="pressed" from="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
 [connection signal="pressed" from="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
+[connection signal="pressed" from="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonWildcards" to="." method="_on_ButtonWildcards_pressed"]
 [connection signal="pressed" from="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonExit" to="." method="_on_ButtonExit_pressed"]
 [connection signal="pressed" from="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/ButtonBack" to="." method="_on_ButtonBack_pressed"]

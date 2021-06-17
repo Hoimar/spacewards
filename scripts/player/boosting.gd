@@ -16,7 +16,7 @@ func _ready():
 
 func enter_state():
 	if boosts_count == 0:
-		fsm.set_state("Falling")
+		fsm.set_state(fsm.prev_state_name)
 		return
 	
 	boost_time = 0

@@ -42,7 +42,7 @@ func _physics_process(delta):
 	if is_on_wall():
 		velocity.x = 0
 	# Debug.
-	$Label.text = "%s | %s" % [fsm.state_name, velocity]
+	#$Label.text = "%s | %s" % [fsm.state_name, velocity]
 
 
 func set_facing(var new: int):

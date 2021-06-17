@@ -1,6 +1,6 @@
 extends Node2D
 
-export var target_path: NodePath
+export var target_path: NodePath 
 onready var target: Switchable = get_node(target_path)
 
 var active: bool = false setget set_active
@@ -12,5 +12,11 @@ func set_active(var new: bool):
 
 
 func _on_Area2D_body_entered(body):
+	print(active)
 	if body is Player:
 		set_active(!active)
+
+
+func _get_configuration_warning():
+	if target_path and not get_node(target_path) is Switchable:
+		return "Target Node has to be an instance of Switchable!"
