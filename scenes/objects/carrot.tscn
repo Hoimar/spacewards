@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/graphics/placeholder tile.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/CARROT.png" type="Texture" id=1]
 [ext_resource path="res://scripts/objects/carrot.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.1162, 10 )
 
 [node name="Carrot" type="Node2D"]
 script = ExtResource( 2 )
@@ -14,7 +15,6 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="."]
-modulate = Color( 1, 0.5, 0, 1 )
 texture = ExtResource( 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
