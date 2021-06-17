@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/world.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/ui/hud.gd" type="Script" id=2]
 [ext_resource path="res://scripts/gamestates/game.gd" type="Script" id=3]
-[ext_resource path="res://scenes/background_planets.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/default_env.tres" type="Environment" id=5]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -13,22 +11,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ViewportContainerBackground" type="ViewportContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-stretch = true
-stretch_shrink = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="ViewportContainerBackground"]
-size = Vector2( 320, 200 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="BackgroundPlanets" parent="ViewportContainerBackground/Viewport" instance=ExtResource( 4 )]
 
 [node name="ViewportContainerWorld" type="ViewportContainer" parent="."]
 anchor_right = 1.0
@@ -64,7 +46,7 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -34.0
+margin_top = -52.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -77,9 +59,9 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 950.0
-margin_bottom = 24.0
+margin_bottom = 42.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer/VBoxContainer"]
+[node name="HBoxHealth" type="HBoxContainer" parent="HUD/MarginContainer/VBoxContainer"]
 margin_right = 940.0
 margin_bottom = 14.0
 custom_constants/separation = 10
@@ -87,16 +69,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBoost" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LabelHealth" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxHealth"]
+margin_right = 42.0
+margin_bottom = 14.0
+text = "Health"
+
+[node name="LabelHealthPoints" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxHealth"]
+margin_left = 52.0
+margin_right = 60.0
+margin_bottom = 14.0
+text = "2"
+
+[node name="HBoxBoost" type="HBoxContainer" parent="HUD/MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 940.0
+margin_bottom = 32.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBoost" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxBoost"]
 margin_right = 44.0
 margin_bottom = 14.0
 text = "Boosts"
 
-[node name="LabelBoostCount" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LabelBoostCount" type="Label" parent="HUD/MarginContainer/VBoxContainer/HBoxBoost"]
 margin_left = 54.0
 margin_right = 62.0
 margin_bottom = 14.0
 text = "2"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 5 )

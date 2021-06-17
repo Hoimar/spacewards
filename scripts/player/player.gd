@@ -19,6 +19,7 @@ var facing: int setget set_facing   # -1 or 1
 var velocity := Vector2.ZERO
 
 
+
 func _ready():
 	jetpack_particles.emitting = false
 
@@ -53,3 +54,7 @@ func set_facing(var new: int):
 
 func consume_carrot(var crispness: int):
 	emit_signal("carrot_consumed", crispness)
+
+
+func take_hit(var strength: int):
+	fsm.set_state("Hit")
