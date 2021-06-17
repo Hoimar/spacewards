@@ -30,7 +30,7 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="SunPivot" type="Spatial" parent="."]
-transform = Transform( 0.976327, 0, -0.216297, 0, 1, 0, 0.216297, 0, 0.976327, 0, 0, 0 )
+transform = Transform( -0.448019, 0, 0.894023, 0, 1, 0, -0.894023, 0, -0.448019, 0, 0, 0 )
 
 [node name="SunGroup" type="Spatial" parent="SunPivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )

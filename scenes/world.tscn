@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://scenes/objects/door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/switch.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tileset_background.tres" type="TileSet" id=8]
+[ext_resource path="res://assets/graphics/Decals/Dark Algae.png" type="Texture" id=9]
+[ext_resource path="res://assets/graphics/Decals/OrangePanels_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/graphics/Decals/Panels_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/graphics/Decals/BG_WALL CLEAN.png" type="Texture" id=12]
+[ext_resource path="res://assets/graphics/Decals/ISS_SIGN.png" type="Texture" id=13]
+[ext_resource path="res://assets/graphics/Decals/DarkWindow.png" type="Texture" id=14]
 
 [node name="World" type="Node2D"]
 
@@ -30,7 +36,50 @@ modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 720917, 0, 0, 720918, 0, 1, 720919, 0, 1, 720920, 0, 1, 720921, 0, 1, 720922, 0, 1, 720923, 0, 1, 720924, 0, 2, 786453, 0, 65536, 786454, 0, 65537, 786455, 0, 65537, 786456, 0, 65537, 786457, 0, 65537, 786458, 0, 65537, 786459, 0, 65537, 786460, 0, 0, 786461, 0, 2, 851989, 0, 65536, 851990, 0, 65537, 851991, 0, 65537, 851992, 0, 65537, 851993, 0, 65537, 851994, 0, 65537, 851995, 0, 65537, 851996, 0, 65537, 851997, 0, 65538, 917525, 0, 65536, 917526, 0, 65537, 917527, 0, 65537, 917528, 0, 65537, 917529, 0, 65537, 917530, 0, 65537, 917531, 0, 65537, 917532, 0, 65537, 917533, 0, 65538, 983061, 0, 65536, 983062, 0, 65537, 983063, 0, 65537, 983064, 0, 65537, 983065, 0, 65537, 983066, 0, 65537, 983067, 0, 65537, 983068, 0, 65537, 983069, 0, 65538, 1048597, 0, 65536, 1048598, 0, 65537, 1048599, 0, 65537, 1048600, 0, 65537, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65538, 1114133, 0, 65536, 1114134, 0, 65537, 1114135, 0, 65537, 1114136, 0, 65537, 1114137, 0, 65537, 1114138, 0, 65537, 1114139, 0, 65537, 1114140, 0, 65537, 1114141, 0, 65538, 1179669, 0, 131072, 1179670, 0, 131073, 1179671, 0, 131073, 1179672, 0, 131073, 1179673, 0, 131073, 1179674, 0, 131073, 1179675, 0, 131073, 1179676, 0, 131073, 1179677, 0, 131074 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="BG_WALL CLEAN" type="Sprite" parent="Background"]
+position = Vector2( 184, 168 )
+texture = ExtResource( 12 )
+
+[node name="BG_WALL CLEAN2" type="Sprite" parent="Background"]
+position = Vector2( 296, 168 )
+texture = ExtResource( 12 )
+
+[node name="DarkWindow" type="Sprite" parent="Background/BG_WALL CLEAN2"]
+position = Vector2( 72, -104 )
+texture = ExtResource( 14 )
+
+[node name="BG_WALL CLEAN3" type="Sprite" parent="Background"]
+position = Vector2( 408, 168 )
+texture = ExtResource( 12 )
+
+[node name="Panels_1" type="Sprite" parent="Background"]
+position = Vector2( 408, 256 )
+texture = ExtResource( 11 )
+
+[node name="Panels_3" type="Sprite" parent="Background"]
+position = Vector2( 184, 256 )
+texture = ExtResource( 11 )
+
+[node name="ISS_SIGN" type="Sprite" parent="Background"]
+position = Vector2( 216, 160 )
+texture = ExtResource( 13 )
+
+[node name="Dark Algae" type="Sprite" parent="Background"]
+position = Vector2( 232, 152 )
+texture = ExtResource( 9 )
+flip_v = true
+
+[node name="Dark Algae2" type="Sprite" parent="Background"]
+position = Vector2( 312, 152 )
+texture = ExtResource( 9 )
+flip_v = true
+
+[node name="OrangePanels_1" type="Sprite" parent="Background"]
+position = Vector2( 296, 256 )
+texture = ExtResource( 10 )
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -67,4 +116,4 @@ target_path = NodePath("../../Doors/Door")
 target_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 376, 144 )
+position = Vector2( 416, 152 )
