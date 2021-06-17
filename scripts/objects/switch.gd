@@ -12,7 +12,7 @@ func set_active(var new: bool):
 
 
 func _on_Area2D_body_entered(body):
-	print(active)
+
 	if body is Player:
 		set_active(!active)
 
