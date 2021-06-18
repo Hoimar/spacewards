@@ -21,7 +21,7 @@ func _process(delta):
 	if enable_key_input:
 		_process_input()
 	
-	if fsm.state_name == "Hit" or fsm.state_name == "Dying":
+	if fsm.state_name == "Dying":
 		return
 	
 	if     target.velocity.y > 0 \
@@ -57,15 +57,11 @@ func jump():
 	   or fsm.state_name == "Landing":
 		return
 	
-	if fsm.state_name == "Hit":
-		fsm.get_node("Jumping").do_jump()  # Only jump, don't enter state and change animations.
-	else:
-		fsm.set_state("Jumping")
+	fsm.set_state("Jumping")
 
 
 func boost():
-	if    fsm.state_name == "Hit" \
-	   or fsm.state_name == "Dying":
+	if fsm.state_name == "Dying":
 		return
 	fsm.set_state("Boosting")
 
@@ -78,7 +74,4 @@ func walk(var facing: int):
 	   or fsm.state_name == "Landing":
 		return
 	
-	if fsm.state_name == "Hit":
-		fsm.get_node("Walking").start_walking()  # Only run walking code, don't enter state and change animations.
-	else:
-		fsm.set_state("Walking")
+	fsm.set_state("Walking")

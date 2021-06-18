@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/graphics/SpritesheetAstronauts.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://scripts/player/falling.gd" type="Script" id=8]
 [ext_resource path="res://scripts/player/player_controller.gd" type="Script" id=9]
 [ext_resource path="res://scripts/player/boosting.gd" type="Script" id=10]
-[ext_resource path="res://scripts/player/hit.gd" type="Script" id=11]
 [ext_resource path="res://scripts/player/dying.gd" type="Script" id=12]
 [ext_resource path="res://scripts/player/landing.gd" type="Script" id=13]
 
@@ -45,26 +44,6 @@ region = Rect2( 160, 0, 32, 32 )
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 224, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 224, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 224, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 96, 224, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
@@ -205,11 +184,6 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": false,
-"name": "hit",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "walking",
@@ -276,9 +250,6 @@ script = ExtResource( 13 )
 [node name="Boosting" type="Node" parent="Fsm"]
 script = ExtResource( 10 )
 
-[node name="Hit" type="Node" parent="Fsm"]
-script = ExtResource( 11 )
-
 [node name="Dying" type="Node" parent="Fsm"]
 script = ExtResource( 12 )
 
@@ -310,7 +281,7 @@ color_ramp = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 47 )
 animation = "idle"
-frame = 6
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Body"]

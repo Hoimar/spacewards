@@ -5,6 +5,7 @@ func _ready():
 	yield(fsm, "ready")
 	yield(player, "ready")
 	player.animated_sprite.connect("animation_finished", self, "anim_finished")
+	player.connect("hit", fsm, "set_state", ["Dying"])
 
 
 func enter_state():
