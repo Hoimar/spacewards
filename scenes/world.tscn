@@ -1,22 +1,16 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/room3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/rooms/room_ending.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/locked_camera.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/graphics/Decals/Dark Algae.png" type="Texture" id=9]
-[ext_resource path="res://assets/graphics/Decals/OrangePanels_1.png" type="Texture" id=10]
-[ext_resource path="res://assets/graphics/Decals/Panels_1.png" type="Texture" id=11]
-[ext_resource path="res://assets/graphics/Decals/BG_WALL CLEAN.png" type="Texture" id=12]
-[ext_resource path="res://assets/graphics/Decals/ISS_SIGN.png" type="Texture" id=13]
-[ext_resource path="res://assets/graphics/Decals/DarkWindow.png" type="Texture" id=14]
 [ext_resource path="res://scenes/background_planets.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scripts/world.gd" type="Script" id=17]
 [ext_resource path="res://scenes/rooms/room1.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/rooms/room2.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("Camera2D/ViewportSpritePlanets/Viewport")
+viewport_path = NodePath("Viewport")
 
 [node name="World" type="Node2D" groups=[
 "world",
@@ -31,59 +25,7 @@ light_mask = 0
 texture = SubResource( 1 )
 flip_v = true
 
-[node name="Viewport" type="Viewport" parent="Camera2D/ViewportSpritePlanets"]
-size = Vector2( 320, 200 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="BackgroundPlanets" parent="Camera2D/ViewportSpritePlanets/Viewport" instance=ExtResource( 15 )]
-
 [node name="Ship" type="Node2D" parent="."]
-
-[node name="Background" type="Node2D" parent="Ship"]
-visible = false
-
-[node name="BG_WALL CLEAN" type="Sprite" parent="Ship/Background"]
-position = Vector2( 184, 168 )
-texture = ExtResource( 12 )
-
-[node name="BG_WALL CLEAN2" type="Sprite" parent="Ship/Background"]
-position = Vector2( 296, 168 )
-texture = ExtResource( 12 )
-
-[node name="DarkWindow" type="Sprite" parent="Ship/Background/BG_WALL CLEAN2"]
-position = Vector2( 72, -104 )
-texture = ExtResource( 14 )
-
-[node name="BG_WALL CLEAN3" type="Sprite" parent="Ship/Background"]
-position = Vector2( 408, 168 )
-texture = ExtResource( 12 )
-
-[node name="Panels_1" type="Sprite" parent="Ship/Background"]
-position = Vector2( 408, 256 )
-texture = ExtResource( 11 )
-
-[node name="Panels_3" type="Sprite" parent="Ship/Background"]
-position = Vector2( 184, 256 )
-texture = ExtResource( 11 )
-
-[node name="ISS_SIGN" type="Sprite" parent="Ship/Background"]
-position = Vector2( 216, 160 )
-texture = ExtResource( 13 )
-
-[node name="Dark Algae" type="Sprite" parent="Ship/Background"]
-position = Vector2( 232, 152 )
-texture = ExtResource( 9 )
-flip_v = true
-
-[node name="Dark Algae2" type="Sprite" parent="Ship/Background"]
-position = Vector2( 312, 152 )
-texture = ExtResource( 9 )
-flip_v = true
-
-[node name="OrangePanels_1" type="Sprite" parent="Ship/Background"]
-position = Vector2( 296, 256 )
-texture = ExtResource( 10 )
 
 [node name="Rooms" type="Node2D" parent="Ship"]
 
@@ -100,3 +42,10 @@ position = Vector2( 320, 0 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
 position = Vector2( 1008, 64 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 320, 200 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="BackgroundPlanets" parent="Viewport" instance=ExtResource( 15 )]

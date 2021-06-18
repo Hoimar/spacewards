@@ -28,3 +28,4 @@ func _on_ButtonRestartRoom_pressed():
 
 func _on_ButtonBackToMenu_pressed():
 	Global.set_state(Global.STATE.BackToMenu)
+	queue_free()

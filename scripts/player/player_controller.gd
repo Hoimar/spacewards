@@ -67,7 +67,6 @@ func boost():
 	if    fsm.state_name == "Hit" \
 	   or fsm.state_name == "Dying":
 		return
-	
 	fsm.set_state("Boosting")
 
 

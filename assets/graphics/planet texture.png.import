@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/light mask.png-417c840aaffa0da2554dcfa139abf119.s3tc.stex"
-path.etc="res://.import/light mask.png-417c840aaffa0da2554dcfa139abf119.etc.stex"
+path.s3tc="res://.import/planet texture.png-6544d86c22aa6121b970dbbcc313f14a.s3tc.stex"
+path.etc="res://.import/planet texture.png-6544d86c22aa6121b970dbbcc313f14a.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/graphics/light mask.png"
-dest_files=[ "res://.import/light mask.png-417c840aaffa0da2554dcfa139abf119.s3tc.stex", "res://.import/light mask.png-417c840aaffa0da2554dcfa139abf119.etc.stex" ]
+source_file="res://assets/graphics/planet texture.png"
+dest_files=[ "res://.import/planet texture.png-6544d86c22aa6121b970dbbcc313f14a.s3tc.stex", "res://.import/planet texture.png-6544d86c22aa6121b970dbbcc313f14a.etc.stex" ]
 
 [params]
 
