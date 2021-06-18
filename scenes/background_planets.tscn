@@ -2,23 +2,19 @@
 
 [ext_resource path="res://scripts/background_planets.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=1]
 params_diffuse_mode = 2
-albedo_color = Color( 0.286393, 0.34, 0.0476, 1 )
+albedo_color = Color( 0.287147, 0.32, 0.1408, 1 )
 
 [sub_resource type="SphereMesh" id=2]
-material = SubResource( 5 )
+material = SubResource( 1 )
 
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.101961, 1, 0, 1 )
-emission_enabled = true
-emission = Color( 0.713726, 1, 0.0862745, 1 )
-emission_energy = 5.0
-emission_operator = 0
-emission_on_uv2 = false
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+albedo_color = Color( 1, 0.941176, 0.564706, 1 )
 
 [sub_resource type="SphereMesh" id=4]
-material = SubResource( 6 )
+material = SubResource( 3 )
 radius = 1.5
 height = 3.0
 
@@ -30,7 +26,7 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="SunPivot" type="Spatial" parent="."]
-transform = Transform( -0.448019, 0, 0.894023, 0, 1, 0, -0.894023, 0, -0.448019, 0, 0, 0 )
+transform = Transform( -0.000872471, 0, -0.999997, 0, 1, 0, 0.999997, 0, -0.000872471, 0, 0, 0 )
 
 [node name="SunGroup" type="Spatial" parent="SunPivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )

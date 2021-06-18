@@ -5,7 +5,7 @@ const BOOST_DURATION := 0.7
 const BOOSTS_START   := 5
 
 var boost_time := 0.0
-var boosts_count := BOOSTS_START
+var boosts_count := BOOSTS_START setget set_boosts_count
 onready var hud: Control = get_tree().get_nodes_in_group("hud")[0]
 
 
@@ -37,6 +37,10 @@ func leave_state():
 	player.jetpack_particles.emitting = false
 
 
-func update_boost(var change: int):
-	boosts_count += change
+func set_boosts_count(var new):
+	boosts_count = new
 	hud.set_boosts_count(boosts_count)
+
+
+func update_boost(var change: int):
+	set_boosts_count(boosts_count + change)

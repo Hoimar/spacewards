@@ -29,7 +29,7 @@ func _set_state(var new):
 	_state = new
 
 func _on_ButtonPlay_pressed():
-	Global.transition_to(Global.GAME)
+	Global.set_state(Global.STATE.Intro)
 
 
 func _on_ButtonSettings_pressed():

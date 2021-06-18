@@ -33,4 +33,3 @@ func set_state(var name: String):
 			state_name = name
 			state.enter_state()
 			break
-

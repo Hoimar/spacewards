@@ -1,6 +1,8 @@
 extends Node
 
+const INTRO := preload("res://scenes/gamestates/intro.tscn")
 const GAME := preload("res://scenes/gamestates/game.tscn")
+const ENDING := preload("res://scenes/gamestates/ending.tscn")
 const POPUP := preload("res://scenes/gamestates/popup_menu.tscn")
 const MENU := preload("res://scenes/gamestates/menu.tscn")
 const SCENE_TRANSITIONER := preload("res://scenes/gamestates/scene_transitioner.tscn")
@@ -10,16 +12,27 @@ const CUTSCENES := "res://scenes/cutscenes/%s.tscn"
 
 const GRAVITY := 30.0
 
+const GAME_SEQUENCE = [
+	INTRO,
+	GAME,
+	ENDING,
+]
+
 enum STATE {
 	Menu,
+	Intro,
+	StartGame,
 	Ingame,
 	Won,
 	Died,
-	Paused,
+	Pause,
 	BackToMenu,
+	RestartRoom,
 	Exiting,
 	Transitioning,
 }
+
+signal restart_room
 
 var level: int = 0
 var state: int = STATE.Menu
@@ -39,13 +52,22 @@ func set_state(var new):
 		return
 	state = new
 	match state:
-		STATE.BackToMenu, STATE.Won:
+		STATE.Intro:
+			transition_to(INTRO)
+		STATE.BackToMenu:
 			transition_to(MENU)
+		STATE.StartGame:
+			transition_to(GAME)
+		STATE.Won:
+			transition_to(ENDING)
 		STATE.Ingame:
 			get_tree().paused = false
-		STATE.Died, STATE.Won, STATE.Paused:
+		STATE.Died, STATE.Pause:
 			get_tree().paused = true
 			get_tree().get_root().add_child(POPUP.instance())
+		STATE.RestartRoom:
+			emit_signal("restart_room")
+			set_state(STATE.Ingame)
 		STATE.Exiting:
 			get_tree().quit()
 

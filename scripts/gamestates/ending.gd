@@ -1,8 +1,10 @@
-extends Switchable
+extends Control
 
-export(int) var strength := 1
 
-onready var area := $Area2D
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +13,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	for body in area.get_overlapping_bodies():
-		if body is Player:
-			body.take_hit(strength)
+	if Input.is_action_pressed("ui_select"):
+		Global.set_state(Global.STATE.BackToMenu)

@@ -1,14 +1,11 @@
+class_name Room
 extends Node2D
 
-export var entrance_path: NodePath
-export var exit_path: NodePath
+
+onready var world: TheWorld = get_tree().get_nodes_in_group("world")[0]
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Area2D_body_entered(body):
+	if body is Player:
+		body.on_room_entered(self)
+		world.set_current_room(self)

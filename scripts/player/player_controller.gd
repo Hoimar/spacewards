@@ -21,6 +21,9 @@ func _process(delta):
 	if enable_key_input:
 		_process_input()
 	
+	if fsm.state_name == "Hit" or fsm.state_name == "Dying":
+		return
+	
 	if     target.velocity.y > 0 \
 	   and not target.is_on_floor() \
 	   and fsm.state_name != "Boosting" :
@@ -38,32 +41,45 @@ func _process(delta):
 
 
 func _process_input():
+	if Input.is_action_pressed("ui_select"):
+		boost()
 	if Input.is_action_pressed("ui_up"):
 		jump()
 	if Input.is_action_pressed("ui_left"):
 		walk(-1)
 	elif Input.is_action_pressed("ui_right"):
 		walk(1)
-	if Input.is_action_pressed("ui_select"):
-		boost()
 
 
 func jump():
-	if    not target.is_on_floor() \
+	if    fsm.state_name == "Dying" \
 	   or fsm.state_name == "Boosting" \
 	   or fsm.state_name == "Landing":
 		return
-	fsm.set_state("Jumping")
+	
+	if fsm.state_name == "Hit":
+		fsm.get_node("Jumping").do_jump()  # Only jump, don't enter state and change animations.
+	else:
+		fsm.set_state("Jumping")
 
 
 func boost():
+	if    fsm.state_name == "Hit" \
+	   or fsm.state_name == "Dying":
+		return
+	
 	fsm.set_state("Boosting")
 
 
 func walk(var facing: int):
 	target.set_facing(facing)
-	if    fsm.state_name == "Boosting" \
+	if    fsm.state_name == "Dying" \
+	   or fsm.state_name == "Boosting" \
 	   or fsm.state_name == "Jumping" \
 	   or fsm.state_name == "Landing":
 		return
-	fsm.set_state("Walking")
+	
+	if fsm.state_name == "Hit":
+		fsm.get_node("Walking").start_walking()  # Only run walking code, don't enter state and change animations.
+	else:
+		fsm.set_state("Walking")
