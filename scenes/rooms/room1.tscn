@@ -1,64 +1,80 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/rooms/room_base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/graphics/Decals/BG_WALL CLEAN.png" type="Texture" id=2]
-[ext_resource path="res://assets/graphics/Decals/Panels_1.png" type="Texture" id=3]
-[ext_resource path="res://assets/graphics/Decals/Dark Algae.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/New Better Tiles/Greenish Background Tileset.png" type="Texture" id=2]
 [ext_resource path="res://assets/graphics/Decals/tube.png" type="Texture" id=5]
 [ext_resource path="res://assets/graphics/Decals/Body_2.png" type="Texture" id=6]
 [ext_resource path="res://assets/graphics/Decals/Body_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/graphics/Decals/Green Algae.png" type="Texture" id=8]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Greenish Background Tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [  ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Greenish Background Tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 32 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [ Vector3( 0, 0, 4 ) ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="Room" instance=ExtResource( 1 )]
 
-[node name="BG_WALL CLEAN2" type="Sprite" parent="Background" index="0"]
-position = Vector2( 104, -32 )
-texture = ExtResource( 2 )
+[node name="TileMap" type="TileMap" parent="Background" index="0"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 1, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -327672, 1, 3, -196616, 1, 65538, -196615, 1, 0, -196614, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -262137, 1, 0, -262136, 1, 0, -131080, 1, 0, -131079, 1, 0, -131078, 1, 0, -131077, 1, 0, -131076, 1, 0, -131075, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 2, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -65544, 1, 0, -65543, 1, 0, -65542, 1, 0, -65541, 1, 0, -65540, 1, 0, -65539, 1, 0, -65538, 1, 0, -65537, 1, 65536, -131072, 1, 0, -131071, 1, 0, -131070, 1, 0, -131069, 1, 0, -131068, 1, 0, -131067, 1, 0, -131066, 1, 0, -131065, 1, 0, -131064, 1, 65536, -8, 1, 0, -7, 1, 0, -6, 1, 0, -5, 1, 65536, -4, 1, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 65536, 65528, 1, 0, 65529, 1, 0, 65530, 1, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 65536, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 196599, 1, 0, 196600, 1, 0, 196601, 1, 0, 196602, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 262135, 1, 0, 262136, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 327671, 1, 0, 327672, 1, 0, 327673, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 65538, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 65539 )
 
-[node name="BG_WALL CLEAN3" type="Sprite" parent="Background" index="1"]
-position = Vector2( 0, -32 )
-texture = ExtResource( 2 )
-
-[node name="BG_WALL CLEAN4" type="Sprite" parent="Background" index="2"]
-position = Vector2( -104, -32 )
-texture = ExtResource( 2 )
-
-[node name="Panels_1" type="Sprite" parent="Background" index="3"]
-position = Vector2( 8, 48 )
-texture = ExtResource( 3 )
-
-[node name="BG_WALL CLEAN" type="Sprite" parent="Background" index="4"]
-position = Vector2( 88, 24 )
-texture = ExtResource( 2 )
-
-[node name="Dark Algae" type="Sprite" parent="Background" index="5"]
-position = Vector2( 104, 56 )
-texture = ExtResource( 4 )
-
-[node name="Panels_2" type="Sprite" parent="Background" index="6"]
-position = Vector2( -104, 48 )
-texture = ExtResource( 3 )
-
-[node name="Green Algae" type="Sprite" parent="Background" index="7"]
-position = Vector2( -104, -56 )
-texture = ExtResource( 8 )
-flip_v = true
-
-[node name="tube3" type="Sprite" parent="Background" index="8"]
-position = Vector2( 88, 24 )
+[node name="tube3" type="Sprite" parent="Background" index="1"]
+position = Vector2( 71.8405, -56.2103 )
 texture = ExtResource( 5 )
 
-[node name="Body_2" type="Sprite" parent="Background" index="9"]
-position = Vector2( 80, 48 )
+[node name="Body_2" type="Sprite" parent="Background" index="2"]
+position = Vector2( -8.85406, -24.1336 )
 texture = ExtResource( 6 )
 
-[node name="tube2" type="Sprite" parent="Background" index="10"]
-position = Vector2( 120, 24 )
+[node name="tube2" type="Sprite" parent="Background" index="3"]
+position = Vector2( -68.9009, -40.6866 )
 texture = ExtResource( 5 )
 
-[node name="Body_1" type="Sprite" parent="Background" index="11"]
-position = Vector2( 112, 48 )
+[node name="Body_1" type="Sprite" parent="Background" index="4"]
+position = Vector2( 109.337, -10.2944 )
 texture = ExtResource( 7 )
 
 [node name="TileMap" parent="." index="2"]
-tile_data = PoolIntArray( -327690, 1, 2, -327689, 1, 196611, -327688, 1, 196608, -327687, 1, 1, -327686, 1, 2, -327685, 1, 131072, -327684, 1, 2, -327683, 1, 2, -327682, 1, 0, -327681, 1, 2, -393216, 1, 65537, -393215, 1, 65536, -393214, 1, 65536, -393213, 1, 2, -393212, 1, 65536, -393211, 1, 65539, -393210, 1, 65539, -393209, 1, 0, -393208, 1, 65536, -393207, 1, 3, -262154, 1, 196609, -327671, 1, 65537, -196618, 1, 131075, -262135, 1, 196611, -131082, 1, 131073, -196599, 1, 65539, -65546, 1, 131072, -131063, 1, 65538, -10, 1, 131072, -65527, 1, 196611, 65526, 1, 1, 9, 1, 196610, 131062, 1, 0, 65545, 1, 0, 196598, 1, 0, 131081, 1, 65538, 262140, 1, 131072, 262141, 1, 3, 196617, 1, 196608, 327675, 1, 3, 327676, 1, 3, 327677, 1, 0, 327678, 1, 131075, 262153, 1, 0, 393206, 1, 65539, 393207, 1, 131074, 393208, 1, 65539, 393209, 1, 196610, 393210, 1, 196610, 393211, 1, 131073, 393212, 1, 196610, 393213, 1, 196610, 393214, 1, 0, 393215, 1, 196611, 327680, 1, 65537, 327681, 1, 2, 327682, 1, 131074, 327683, 1, 196610, 327684, 1, 131072, 327685, 1, 65536, 327686, 1, 131072, 327687, 1, 65537, 327688, 1, 65539, 327689, 1, 65539 )
+tile_data = PoolIntArray( -393226, 5, 0, -393225, 5, 1, -393224, 5, 1, -393223, 5, 1, -393222, 5, 1, -393221, 5, 1, -393220, 5, 1, -393219, 5, 1, -393218, 5, 1, -393217, 5, 1, -458752, 5, 1, -458751, 5, 1, -458750, 5, 1, -458749, 5, 1, -458748, 5, 1, -458747, 5, 1, -458746, 5, 1, -458745, 5, 1, -458744, 5, 1, -458743, 5, 1, -458742, 5, 131079, -327690, 5, 65536, -327689, 5, 65537, -327688, 5, 65541, -327687, 5, 131073, -327686, 5, 131073, -327685, 5, 131073, -327684, 5, 131073, -327683, 5, 131073, -327682, 5, 131073, -327681, 5, 131073, -393216, 5, 131073, -393215, 5, 131073, -393214, 5, 131073, -393213, 5, 131073, -393212, 5, 131073, -393211, 5, 131073, -393210, 5, 131073, -393209, 5, 131073, -393208, 5, 131073, -393207, 5, 65542, -393206, 5, 65538, -262154, 5, 65536, -262153, 5, 65541, -262152, 5, 131074, -262151, 1, 0, -327671, 5, 65536, -327670, 5, 65538, -196618, 5, 65536, -196617, 5, 65538, -262135, 5, 65536, -262134, 5, 65538, -131082, 5, 65536, -131081, 5, 65538, -196599, 5, 65536, -196598, 5, 65538, -65546, 5, 65536, -65545, 5, 65538, -131064, 1, 0, -131063, 5, 65536, -131062, 5, 65538, -10, 5, 65536, -9, 5, 65538, -65527, 5, 65536, -65526, 5, 65538, 65526, 5, 65536, 65527, 5, 65538, 9, 5, 65536, 10, 5, 65538, 131062, 5, 65540, 131063, 5, 131074, 65541, 1, 1, 65545, 5, 65536, 65546, 5, 65538, 196598, 5, 196611, 131081, 5, 65536, 131082, 5, 65538, 262140, 5, 0, 262141, 5, 131079, 196617, 5, 65536, 196618, 5, 65538, 327675, 5, 0, 327676, 5, 131078, 327677, 5, 131077, 327678, 5, 2, 262153, 5, 65536, 262154, 5, 65538, 393206, 5, 0, 393207, 5, 1, 393208, 5, 1, 393209, 5, 1, 393210, 5, 1, 393211, 5, 131078, 393212, 5, 65537, 393213, 5, 65537, 393214, 5, 131077, 393215, 5, 1, 327680, 5, 1, 327681, 5, 1, 327682, 5, 1, 327683, 5, 1, 327684, 5, 1, 327685, 5, 1, 327686, 5, 1, 327687, 5, 1, 327688, 5, 1, 327689, 5, 131078, 327690, 5, 65538, 458742, 5, 131072, 458743, 5, 131073, 458744, 5, 131073, 458745, 5, 131073, 458746, 5, 131073, 458747, 5, 131073, 458748, 5, 131073, 458749, 5, 131073, 458750, 5, 131073, 458751, 5, 131073, 393216, 5, 131073, 393217, 5, 131073, 393218, 5, 131073, 393219, 5, 131073, 393220, 5, 131073, 393221, 5, 131073, 393222, 5, 131073, 393223, 5, 131073, 393224, 5, 131073, 393225, 5, 131073, 393226, 5, 131074 )

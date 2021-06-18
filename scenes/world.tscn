@@ -33,11 +33,11 @@ flip_v = true
 [node name="Room" parent="Ship/Rooms" instance=ExtResource( 18 )]
 position = Vector2( 960, 0 )
 
-[node name="Room2" parent="Ship/Rooms" instance=ExtResource( 19 )]
-position = Vector2( 640, 0 )
-
 [node name="Room3" parent="Ship/Rooms" instance=ExtResource( 2 )]
 position = Vector2( 320, 0 )
+
+[node name="Room2" parent="Ship/Rooms" instance=ExtResource( 19 )]
+position = Vector2( 640, 0 )
 
 [node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
 
