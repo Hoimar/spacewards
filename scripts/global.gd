@@ -53,12 +53,16 @@ func set_state(var new):
 	state = new
 	match state:
 		STATE.Intro:
+			get_tree().paused = true
 			transition_to(INTRO)
 		STATE.BackToMenu:
+			get_tree().paused = true
 			transition_to(MENU)
 		STATE.StartGame:
+			get_tree().paused = true
 			transition_to(GAME)
 		STATE.Won:
+			get_tree().paused = true
 			transition_to(ENDING)
 		STATE.Ingame:
 			get_tree().paused = false

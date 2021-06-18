@@ -19,10 +19,17 @@ func enter_state():
 		fsm.set_state(fsm.prev_state_name)
 		return
 	
+	start_boosting()
+	player.animated_sprite.play("boosting")
+
+
+func start_boosting():
+	if boosts_count == 0:
+		return
+	
 	boost_time = 0
 	update_boost(-1)
 	player.jetpack_particles.emitting = true
-	player.animated_sprite.play("boosting")
 
 
 func physics_tick(var delta: float):

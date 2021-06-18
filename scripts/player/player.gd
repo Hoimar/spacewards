@@ -75,7 +75,7 @@ func on_room_entered(var room: Node):
 func _on_room_restarted():
 	var world: TheWorld = get_tree().get_nodes_in_group("world")[0]
 	global_position = room_enter_state["position"]
-	fsm.set_state("Idle")	
+	fsm.set_state("Idle")
 	fsm.get_node("Hit").health = room_enter_state["health"]
 	fsm.get_node("Boosting").boosts_count = room_enter_state["boosts"]
 	velocity = Vector2.ZERO
