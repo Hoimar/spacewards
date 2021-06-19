@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/room_boosting_over_hazards.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scenes/rooms/room_by_luke_2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/rooms/room_by_luke_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/rooms/room_star_observatory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/shaders/fog.shader" type="Shader" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://scenes/background_planets.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scripts/world.gd" type="Script" id=17]
 [ext_resource path="res://scenes/rooms/room_start.tscn" type="PackedScene" id=18]
@@ -15,6 +17,12 @@
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 9 )
+shader_param/color = Color( 0.419608, 0.552941, 0.635294, 1 )
+shader_param/frequency = 10.0
+shader_param/OCTAVES = 4
 
 [node name="World" type="Node2D" groups=[
 "world",
@@ -66,4 +74,16 @@ position = Vector2( 320, 192 )
 position = Vector2( 0, 192 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 1027.03, 60.1541 )
+position = Vector2( 1029.23, 60.2839 )
+
+[node name="FogOverlay" type="Sprite" parent="Ship"]
+material = SubResource( 2 )
+position = Vector2( 1440, 0 )
+scale = Vector2( 10, 10 )
+z_index = 11
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 200 )
+__meta__ = {
+"_edit_lock_": true
+}

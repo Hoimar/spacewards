@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 [node name="TileMapBackground" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 
 [node name="Background" type="Node2D" parent="."]

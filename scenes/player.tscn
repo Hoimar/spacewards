@@ -261,7 +261,7 @@ fsm_path = NodePath("../Fsm")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Body"]
 light_mask = 0
-position = Vector2( -2.9692, 12.2412 )
+position = Vector2( -2.9692, 11.2412 )
 amount = 100
 lifetime = 0.5
 local_coords = false
@@ -281,6 +281,7 @@ color_ramp = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 42 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Body"]

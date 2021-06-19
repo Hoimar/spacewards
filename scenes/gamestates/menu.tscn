@@ -368,69 +368,83 @@ columns = 2
 
 [node name="LabelJump" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 3.0
-margin_right = 42.0
+margin_right = 54.0
 margin_bottom = 17.0
 text = "Jump:"
 
 [node name="ButtonJump" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 52.0
+margin_left = 64.0
 margin_right = 370.0
 size_flags_horizontal = 3
 action = "ui_up"
 
 [node name="LabelBoost" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 33.0
-margin_right = 42.0
+margin_right = 54.0
 margin_bottom = 47.0
 text = "Boost:"
 
 [node name="ButtonBoost" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 52.0
+margin_left = 64.0
 margin_top = 30.0
 margin_right = 370.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 action = "ui_select"
 
-[node name="LabelLeft" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+[node name="LabelInteract" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 63.0
-margin_right = 42.0
+margin_right = 54.0
 margin_bottom = 77.0
-text = "Left:"
+text = "Interact:"
 
-[node name="ButtonLeft" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 52.0
+[node name="ButtonInteract" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 64.0
 margin_top = 60.0
 margin_right = 370.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
-action = "ui_left"
+action = "interact"
 
-[node name="LabelRight" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+[node name="LabelLeft" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 93.0
-margin_right = 42.0
+margin_right = 54.0
 margin_bottom = 107.0
-text = "Right:"
+text = "Left:"
 
-[node name="ButtonRight" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 52.0
+[node name="ButtonLeft" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 64.0
 margin_top = 90.0
 margin_right = 370.0
 margin_bottom = 110.0
 size_flags_horizontal = 3
-action = "ui_right"
+action = "ui_left"
 
-[node name="LabelPause" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+[node name="LabelRight" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 123.0
-margin_right = 42.0
+margin_right = 54.0
 margin_bottom = 137.0
-text = "Pause:"
+text = "Right:"
 
-[node name="ButtonPause" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 52.0
+[node name="ButtonRight" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 64.0
 margin_top = 120.0
 margin_right = 370.0
 margin_bottom = 140.0
+size_flags_horizontal = 3
+action = "ui_right"
+
+[node name="LabelPause" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
+margin_top = 153.0
+margin_right = 54.0
+margin_bottom = 167.0
+text = "Pause:"
+
+[node name="ButtonPause" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
+margin_left = 64.0
+margin_top = 150.0
+margin_right = 370.0
+margin_bottom = 170.0
 size_flags_horizontal = 3
 action = "pause"
 
