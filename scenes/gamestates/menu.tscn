@@ -138,7 +138,7 @@ margin_right = 900.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 80, 40 )
 size_flags_horizontal = 0
-text = "Back"
+text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -227,7 +227,7 @@ margin_right = 150.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Play"
+text = "PLAY"
 
 [node name="ButtonSettings" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 33.0
@@ -235,7 +235,7 @@ margin_right = 150.0
 margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Settings"
+text = "SETTINGS"
 
 [node name="ButtonWildcards" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 67.0
@@ -243,7 +243,7 @@ margin_right = 150.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Wildcard Info"
+text = "WILDCARD INFO"
 
 [node name="ButtonExit" type="Button" parent="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 100.0
@@ -251,7 +251,7 @@ margin_right = 150.0
 margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Exit"
+text = "EXIT"
 
 [node name="ContainerSettings" type="Control" parent="HBoxContainer"]
 margin_left = 1920.0
@@ -446,7 +446,7 @@ margin_right = 80.0
 margin_bottom = 400.0
 rect_min_size = Vector2( 80, 40 )
 size_flags_horizontal = 0
-text = "Back"
+text = "BACK"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
