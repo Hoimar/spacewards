@@ -296,7 +296,6 @@ color_ramp = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 42 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Body"]

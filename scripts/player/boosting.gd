@@ -2,7 +2,7 @@ extends PlayerState
 
 const BOOST_STRENGTH := 35.0
 const BOOST_DURATION := 0.7
-const BOOSTS_START   := 5
+const BOOSTS_START   := 2
 
 var boost_time := 0.0
 var boosts_count := BOOSTS_START setget set_boosts_count

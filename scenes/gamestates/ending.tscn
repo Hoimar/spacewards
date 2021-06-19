@@ -21,18 +21,19 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 335.0
-margin_top = 140.0
-margin_right = 625.0
-margin_bottom = 459.0
+margin_left = 65.0
+margin_top = 129.0
+margin_right = 895.0
+margin_bottom = 471.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 290.0
-margin_bottom = 319.0
+margin_right = 830.0
+margin_bottom = 342.0
 custom_constants/line_spacing = 3
-text = "Happily they blast away.
+text = "Congratulations, your friend is in safety.
 
-You rescued your friend.
+You watch the crescent sun as your thrusters come to life and you blast Spacewards.
+
 
 ~ The End ~
 
@@ -45,7 +46,6 @@ Code: Hoimar
 Art: idleluke
 Music & Sound: Apartao"
 align = 1
-lines_skipped = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

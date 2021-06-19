@@ -2,8 +2,8 @@ extends Control
 
 
 onready var animation_player := $AnimationPlayer
-onready var label := $CenterContainer/VBoxContainer/Label
-onready var button_resume := $CenterContainer/VBoxContainer/ButtonResume
+onready var label := $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Label
+onready var button_resume := $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonResume
 
 
 # Called when the node enters the scene tree for the first time.

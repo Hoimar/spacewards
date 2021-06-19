@@ -69,6 +69,7 @@ func take_hit():
 func on_room_entered(var room: Node):
 	room_enter_state["position"] = global_position
 	room_enter_state["boosts"] = fsm.get_node("Boosting").boosts_count
+	#print("Saving on entering ", room, ": ", room_enter_state)
 
 
 func _on_room_restarted():
@@ -77,3 +78,4 @@ func _on_room_restarted():
 	fsm.set_state("Idle")
 	fsm.get_node("Boosting").boosts_count = room_enter_state["boosts"]
 	velocity = Vector2.ZERO
+	#print("Restarted in ", world.current_room, ": ", room_enter_state)

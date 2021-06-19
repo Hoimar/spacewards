@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/placeholder tile.png-a760ddd7465bf56c3f29f246b76f7409.stex"
+path="res://.import/Rescue Spaceship.png-0c7628ddbb1da16ba70a692869b6e16d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/placeholder tile.png"
-dest_files=[ "res://.import/placeholder tile.png-a760ddd7465bf56c3f29f246b76f7409.stex" ]
+source_file="res://assets/graphics/Rescue Spaceship.png"
+dest_files=[ "res://.import/Rescue Spaceship.png-0c7628ddbb1da16ba70a692869b6e16d.stex" ]
 
 [params]
 
