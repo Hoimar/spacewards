@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scripts/gamestates/menu.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ui/input_remap_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/graphics/wildcards.png" type="Texture" id=4]
+[ext_resource path="res://assets/music/Track 1.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "to_settings"
@@ -38,6 +40,7 @@ tracks/0/keys = {
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 6 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,7 +92,7 @@ __meta__ = {
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 910.0
-margin_bottom = 557.0
+margin_bottom = 569.0
 rect_pivot_offset = Vector2( -946.505, -100 )
 custom_constants/separation = 20
 
@@ -102,28 +105,28 @@ stretch_mode = 4
 [node name="HBoxLabels" type="HBoxContainer" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer"]
 margin_top = 416.0
 margin_right = 860.0
-margin_bottom = 447.0
+margin_bottom = 459.0
 custom_constants/separation = 50
 alignment = 1
 
 [node name="LabelCarrots" type="Label" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxLabels"]
-margin_left = 163.0
-margin_right = 384.0
-margin_bottom = 31.0
+margin_left = 15.0
+margin_right = 375.0
+margin_bottom = 43.0
 text = "Collect a frozen carrot to replenish
 one jetpack boost!"
 
 [node name="LabelTime" type="Label" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxLabels"]
-margin_left = 434.0
-margin_right = 697.0
-margin_bottom = 31.0
+margin_left = 425.0
+margin_right = 845.0
+margin_bottom = 43.0
 text = "Watch the background, you'll see the sun
  mirror the hour hand of your local clock."
 
 [node name="HBoxButton" type="HBoxContainer" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer"]
-margin_top = 467.0
+margin_top = 479.0
 margin_right = 860.0
-margin_bottom = 507.0
+margin_bottom = 519.0
 alignment = 2
 
 [node name="ButtonBack" type="Button" parent="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxButton"]
@@ -285,7 +288,7 @@ custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer"]
 margin_right = 760.0
-margin_bottom = 14.0
+margin_bottom = 20.0
 text = "Settings"
 align = 1
 __meta__ = {
@@ -293,7 +296,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer"]
-margin_top = 34.0
+margin_top = 40.0
 margin_right = 760.0
 margin_bottom = 340.0
 size_flags_vertical = 3
@@ -304,20 +307,19 @@ __meta__ = {
 
 [node name="GridSettings" type="GridContainer" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_right = 370.0
-margin_bottom = 306.0
+margin_bottom = 300.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 10
 custom_constants/hseparation = 5
 columns = 2
 
 [node name="LabelMaster" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
-margin_top = 1.0
-margin_right = 104.0
-margin_bottom = 15.0
+margin_right = 150.0
+margin_bottom = 20.0
 text = "Master volume: "
 
 [node name="HSliderMaster" type="HSlider" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
-margin_left = 109.0
+margin_left = 155.0
 margin_right = 370.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
@@ -326,32 +328,32 @@ step = 0.05
 value = 1.0
 
 [node name="LabelMusic" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
-margin_top = 27.0
-margin_right = 104.0
-margin_bottom = 41.0
+margin_top = 30.0
+margin_right = 150.0
+margin_bottom = 50.0
 text = "Music volume: "
 
 [node name="HSliderMusic" type="HSlider" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
-margin_left = 109.0
-margin_top = 26.0
+margin_left = 155.0
+margin_top = 30.0
 margin_right = 370.0
-margin_bottom = 42.0
+margin_bottom = 46.0
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
-value = 1.0
+value = 0.6
 
 [node name="LabelSound" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
-margin_top = 53.0
-margin_right = 104.0
-margin_bottom = 67.0
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 80.0
 text = "Sound volume: "
 
 [node name="HSliderSound" type="HSlider" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
-margin_left = 109.0
-margin_top = 52.0
+margin_left = 155.0
+margin_top = 60.0
 margin_right = 370.0
-margin_bottom = 68.0
+margin_bottom = 76.0
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
@@ -360,7 +362,7 @@ value = 1.0
 [node name="GridControls" type="GridContainer" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 390.0
 margin_right = 760.0
-margin_bottom = 306.0
+margin_bottom = 300.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
@@ -368,81 +370,68 @@ columns = 2
 
 [node name="LabelJump" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
 margin_top = 3.0
-margin_right = 54.0
-margin_bottom = 17.0
+margin_right = 60.0
+margin_bottom = 23.0
 text = "Jump:"
 
 [node name="ButtonJump" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 64.0
+margin_left = 70.0
 margin_right = 370.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 action = "ui_up"
 
 [node name="LabelBoost" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 33.0
-margin_right = 54.0
-margin_bottom = 47.0
+margin_top = 39.0
+margin_right = 60.0
+margin_bottom = 59.0
 text = "Boost:"
 
 [node name="ButtonBoost" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 64.0
-margin_top = 30.0
+margin_left = 70.0
+margin_top = 36.0
 margin_right = 370.0
-margin_bottom = 50.0
+margin_bottom = 62.0
 size_flags_horizontal = 3
 action = "ui_select"
 
-[node name="LabelInteract" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 63.0
-margin_right = 54.0
-margin_bottom = 77.0
-text = "Interact:"
-
-[node name="ButtonInteract" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 64.0
-margin_top = 60.0
-margin_right = 370.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-action = "interact"
-
 [node name="LabelLeft" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 93.0
-margin_right = 54.0
-margin_bottom = 107.0
+margin_top = 75.0
+margin_right = 60.0
+margin_bottom = 95.0
 text = "Left:"
 
 [node name="ButtonLeft" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 64.0
-margin_top = 90.0
+margin_left = 70.0
+margin_top = 72.0
 margin_right = 370.0
-margin_bottom = 110.0
+margin_bottom = 98.0
 size_flags_horizontal = 3
 action = "ui_left"
 
 [node name="LabelRight" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 123.0
-margin_right = 54.0
-margin_bottom = 137.0
+margin_top = 111.0
+margin_right = 60.0
+margin_bottom = 131.0
 text = "Right:"
 
 [node name="ButtonRight" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 64.0
-margin_top = 120.0
+margin_left = 70.0
+margin_top = 108.0
 margin_right = 370.0
-margin_bottom = 140.0
+margin_bottom = 134.0
 size_flags_horizontal = 3
 action = "ui_right"
 
 [node name="LabelPause" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 153.0
-margin_right = 54.0
+margin_top = 147.0
+margin_right = 60.0
 margin_bottom = 167.0
 text = "Pause:"
 
 [node name="ButtonPause" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
-margin_left = 64.0
-margin_top = 150.0
+margin_left = 70.0
+margin_top = 144.0
 margin_right = 370.0
 margin_bottom = 170.0
 size_flags_horizontal = 3
@@ -459,6 +448,12 @@ text = "Back"
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="HBoxContainer/ContainerWildcards/MarginContainer/VBoxContainer/HBoxButton/ButtonBack" to="." method="_on_ButtonBack_pressed"]
 [connection signal="pressed" from="HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]

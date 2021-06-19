@@ -9,6 +9,7 @@ func _ready():
 
 
 func enter_state():
+	Global.play_sound(get_node("sfx").stream)
 	player.animated_sprite.play("dying")
 
 

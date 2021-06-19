@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/graphics/SpritesheetAstronauts.png" type="Texture" id=2]
@@ -10,8 +10,11 @@
 [ext_resource path="res://scripts/player/falling.gd" type="Script" id=8]
 [ext_resource path="res://scripts/player/player_controller.gd" type="Script" id=9]
 [ext_resource path="res://scripts/player/boosting.gd" type="Script" id=10]
+[ext_resource path="res://assets/sounds/Death.wav" type="AudioStream" id=11]
 [ext_resource path="res://scripts/player/dying.gd" type="Script" id=12]
 [ext_resource path="res://scripts/player/landing.gd" type="Script" id=13]
+[ext_resource path="res://assets/sounds/Jump.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/Fly.wav" type="AudioStream" id=15]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.0140845, 0.669014, 1 )
@@ -238,6 +241,10 @@ script = ExtResource( 5 )
 [node name="Jumping" type="Node" parent="Fsm"]
 script = ExtResource( 7 )
 
+[node name="sfx" type="AudioStreamPlayer2D" parent="Fsm/Jumping"]
+stream = ExtResource( 14 )
+bus = "Sound"
+
 [node name="Walking" type="Node" parent="Fsm"]
 script = ExtResource( 6 )
 
@@ -250,8 +257,16 @@ script = ExtResource( 13 )
 [node name="Boosting" type="Node" parent="Fsm"]
 script = ExtResource( 10 )
 
+[node name="sfx" type="AudioStreamPlayer2D" parent="Fsm/Boosting"]
+stream = ExtResource( 15 )
+bus = "Sound"
+
 [node name="Dying" type="Node" parent="Fsm"]
 script = ExtResource( 12 )
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="Fsm/Dying"]
+stream = ExtResource( 11 )
+bus = "Sound"
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource( 9 )

@@ -13,7 +13,7 @@ func _ready():
 	var fade_length: float = \
 			animation_player.get_animation("transition").length / 2
 	tween_fade_out_music.interpolate_method(self, "set_music_volume",
-			volume_start, linear2db(0), fade_length, \
+			volume_start, -80, fade_length, \
 			Tween.TRANS_QUAD, Tween.EASE_IN)
 	animation_player.play("transition")
 	tween_fade_out_music.start()

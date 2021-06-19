@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/rooms/room_base_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/graphics/Decals/BG_WALL CLEAN.png" type="Texture" id=2]
-[ext_resource path="res://scenes/objects/hazard.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/hazard_wires.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/objects/carrot.tscn" type="PackedScene" id=9]
 
 [node name="Room" instance=ExtResource( 1 )]
@@ -40,35 +40,29 @@ texture = ExtResource( 2 )
 [node name="TileMap" parent="." index="2"]
 tile_data = PoolIntArray( -393227, 7, 0, -393226, 7, 1, -393225, 7, 1, -393224, 7, 1, -393223, 7, 1, -393222, 7, 1, -393221, 7, 1, -393220, 7, 1, -393219, 7, 1, -393218, 7, 1, -393217, 7, 1, -458752, 7, 1, -458751, 7, 1, -458750, 7, 1, -458749, 7, 1, -458748, 7, 5, -458747, 7, 196609, -458746, 7, 6, -458745, 7, 1, -458744, 7, 1, -458743, 7, 1, -458742, 7, 2, -327691, 7, 131072, -327690, 7, 131073, -327689, 7, 131073, -327688, 7, 131073, -327687, 7, 131073, -327686, 7, 131073, -327685, 7, 131073, -327684, 7, 131073, -327683, 7, 131073, -327682, 7, 131073, -327681, 7, 131073, -393216, 7, 131073, -393215, 7, 131073, -393214, 7, 131073, -393213, 7, 131073, -393212, 7, 131074, -393211, 8, 196611, -393210, 7, 131072, -393209, 7, 131073, -393208, 7, 131073, -393207, 7, 131073, -393206, 7, 131074, -131073, 2, 0, -196608, 2, 0, -65546, 8, 196611, -65537, 8, 0, -131072, 8, 2, -131063, 8, 196608, -131062, 8, 196610, -11, 7, 0, -10, 7, 2, -1, 8, 131072, -65536, 8, 131074, -65527, 7, 0, -65526, 7, 2, 65525, 7, 65536, 65526, 7, 65538, 9, 7, 65536, 10, 7, 65538, 131061, 7, 65536, 131062, 7, 65538, 65545, 7, 65536, 65546, 7, 65538, 196597, 7, 65536, 196598, 7, 65538, 131081, 7, 65536, 131082, 7, 65538, 262133, 7, 65536, 262134, 7, 65538, 196617, 7, 65536, 196618, 7, 65538, 327669, 7, 65536, 327670, 7, 65538, 262153, 7, 65536, 262154, 7, 65538, 393205, 7, 65536, 393206, 7, 131077, 393207, 7, 1, 393208, 7, 1, 393209, 7, 1, 393210, 7, 1, 393211, 7, 1, 393212, 7, 1, 393213, 7, 1, 393214, 7, 1, 393215, 7, 1, 327680, 7, 1, 327681, 7, 1, 327682, 7, 1, 327683, 7, 1, 327684, 7, 1, 327685, 7, 1, 327686, 7, 1, 327687, 7, 1, 327688, 7, 1, 327689, 7, 131078, 327690, 7, 65538, 458741, 7, 131072, 458742, 7, 131073, 458743, 7, 131073, 458744, 7, 131073, 458745, 7, 131073, 458746, 7, 131073, 458747, 7, 131073, 458748, 7, 131073, 458749, 7, 131073, 458750, 7, 131073, 458751, 7, 131073, 393216, 7, 131073, 393217, 7, 131073, 393218, 7, 131073, 393219, 7, 131073, 393220, 7, 131073, 393221, 7, 131073, 393222, 7, 131073, 393223, 7, 131073, 393224, 7, 131073, 393225, 7, 131073, 393226, 7, 131074 )
 
-[node name="Hazard" parent="Foreground" index="0" instance=ExtResource( 3 )]
-position = Vector2( -32, 72 )
-
-[node name="Hazard2" parent="Foreground" index="1" instance=ExtResource( 3 )]
-position = Vector2( -64, 72 )
-
-[node name="Hazard3" parent="Foreground" index="2" instance=ExtResource( 3 )]
-position = Vector2( -96, 72 )
-
-[node name="Hazard4" parent="Foreground" index="3" instance=ExtResource( 3 )]
-position = Vector2( -128, 72 )
-
-[node name="Hazard5" parent="Foreground" index="4" instance=ExtResource( 3 )]
-position = Vector2( 128, 72 )
-
-[node name="Hazard6" parent="Foreground" index="5" instance=ExtResource( 3 )]
-position = Vector2( 96, 72 )
-
-[node name="Hazard7" parent="Foreground" index="6" instance=ExtResource( 3 )]
-position = Vector2( 64, 72 )
-
-[node name="Hazard8" parent="Foreground" index="7" instance=ExtResource( 3 )]
-position = Vector2( 32, 72 )
-
-[node name="Hazard9" parent="Foreground" index="8" instance=ExtResource( 3 )]
-position = Vector2( 0, 72 )
-
-[node name="Carrot" parent="Foreground" index="9" instance=ExtResource( 9 )]
+[node name="Carrot" parent="Foreground" index="0" instance=ExtResource( 9 )]
 position = Vector2( 80, -48 )
 
-[node name="Carrot2" parent="Foreground" index="10" instance=ExtResource( 9 )]
+[node name="Carrot2" parent="Foreground" index="1" instance=ExtResource( 9 )]
 position = Vector2( -80, -48 )
+
+[node name="Wires" parent="Foreground" index="2" instance=ExtResource( 3 )]
+position = Vector2( -120, 64 )
+
+[node name="Wires2" parent="Foreground" index="3" instance=ExtResource( 3 )]
+position = Vector2( -80, 64 )
+
+[node name="Wires3" parent="Foreground" index="4" instance=ExtResource( 3 )]
+position = Vector2( -40, 64 )
+
+[node name="Wires4" parent="Foreground" index="5" instance=ExtResource( 3 )]
+position = Vector2( 0, 64 )
+
+[node name="Wires5" parent="Foreground" index="6" instance=ExtResource( 3 )]
+position = Vector2( 40, 64 )
+
+[node name="Wires6" parent="Foreground" index="7" instance=ExtResource( 3 )]
+position = Vector2( 80, 64 )
+
+[node name="Wires7" parent="Foreground" index="8" instance=ExtResource( 3 )]
+position = Vector2( 120, 64 )

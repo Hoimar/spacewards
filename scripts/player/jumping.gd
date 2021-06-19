@@ -13,6 +13,7 @@ func enter_state():
 
 func do_jump():
 	if player.is_on_floor():
+		Global.play_sound(get_node("sfx").stream)
 		player.velocity.y = Player.JUMP_VELOCITY
 
 

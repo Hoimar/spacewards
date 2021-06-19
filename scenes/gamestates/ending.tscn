@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/gamestates/ending.gd" type="Script" id=1]
+[ext_resource path="res://assets/music/Track 3.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=3]
 
 [node name="Ending" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -18,14 +21,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 380.0
-margin_top = 182.0
-margin_right = 580.0
-margin_bottom = 417.0
+margin_left = 335.0
+margin_top = 140.0
+margin_right = 625.0
+margin_bottom = 459.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 200.0
-margin_bottom = 235.0
+margin_right = 290.0
+margin_bottom = 319.0
 custom_constants/line_spacing = 3
 text = "Happily they blast away.
 
@@ -43,3 +46,9 @@ Art: idleluke
 Music & Sound: Apartao"
 align = 1
 lines_skipped = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+autoplay = true
+bus = "Music"

@@ -12,6 +12,8 @@ onready var hud: Control = get_tree().get_nodes_in_group("hud")[0]
 func _ready():
 	yield(fsm, "ready")
 	player.connect("carrot_consumed", self, "update_boost")
+	yield(hud, "ready")
+	set_boosts_count(boosts_count)
 
 
 func enter_state():
@@ -30,6 +32,7 @@ func start_boosting():
 	boost_time = 0
 	update_boost(-1)
 	player.jetpack_particles.emitting = true
+	Global.play_sound(get_node("sfx").stream)
 
 
 func physics_tick(var delta: float):

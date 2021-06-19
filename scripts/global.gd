@@ -104,6 +104,7 @@ func play_sound(var stream: AudioStream, var pos = null):
 		asp = AudioStreamPlayer.new()
 	
 	asp.stream = stream
+	asp.bus = "Sound"
 	asp.connect("finished", asp, "queue_free")
 	add_child(asp)
 	asp.play()
