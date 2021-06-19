@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DOOR.png-e20dacb11d60e2cfffa26601f01e4feb.stex"
+path="res://.import/window long transparent.png-5c7afa07a37ddd239737b936dc2e903f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/DOOR.png"
-dest_files=[ "res://.import/DOOR.png-e20dacb11d60e2cfffa26601f01e4feb.stex" ]
+source_file="res://assets/graphics/Decals/window long transparent.png"
+dest_files=[ "res://.import/window long transparent.png-5c7afa07a37ddd239737b936dc2e903f.stex" ]
 
 [params]
 

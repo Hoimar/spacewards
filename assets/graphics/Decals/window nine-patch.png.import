@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DarkWindow.png-f7ce5b3ab51efa9d4969e952c35ea8d8.stex"
+path="res://.import/window nine-patch.png-6c89e8efac397379f9a133385cc25e57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/Decals/DarkWindow.png"
-dest_files=[ "res://.import/DarkWindow.png-f7ce5b3ab51efa9d4969e952c35ea8d8.stex" ]
+source_file="res://assets/graphics/Decals/window nine-patch.png"
+dest_files=[ "res://.import/window nine-patch.png-6c89e8efac397379f9a133385cc25e57.stex" ]
 
 [params]
 

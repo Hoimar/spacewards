@@ -16,5 +16,6 @@ func _ready():
 func update_time():
 	var t := OS.get_time()
 	var time_fraction: float = t["hour"] + t["minute"] / 60.0 + t["second"] / 3600.0
+	#time_fraction = 12
 	var degrees := time_fraction * 360.0 / 12.0
 	sun_pivot.rotation.y = -deg2rad(degrees)

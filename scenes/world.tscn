@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/rooms/room3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/rooms/room_boosting_over_hazards.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/rooms/room_ending.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/graphics/stars background.png" type="Texture" id=4]
 [ext_resource path="res://scenes/locked_camera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/rooms/room_by_luke_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/rooms/room_by_luke_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/rooms/room_star_observatory.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/background_planets.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scripts/world.gd" type="Script" id=17]
-[ext_resource path="res://scenes/rooms/room1.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/rooms/room2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/rooms/room_start.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/rooms/room_tutorial_carrots.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -17,8 +21,19 @@ viewport_path = NodePath("Viewport")
 ]]
 script = ExtResource( 17 )
 
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 320, 200 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="BackgroundPlanets" parent="Viewport" instance=ExtResource( 15 )]
+
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 target_path = NodePath("../Ship/Player")
+
+[node name="stars background" type="Sprite" parent="Camera2D"]
+texture = ExtResource( 4 )
 
 [node name="ViewportSpritePlanets" type="Sprite" parent="Camera2D"]
 process_priority = 1
@@ -33,20 +48,22 @@ flip_v = true
 [node name="Room" parent="Ship/Rooms" instance=ExtResource( 18 )]
 position = Vector2( 960, 0 )
 
-[node name="Room3" parent="Ship/Rooms" instance=ExtResource( 2 )]
-position = Vector2( 320, 0 )
-
 [node name="Room2" parent="Ship/Rooms" instance=ExtResource( 19 )]
 position = Vector2( 640, 0 )
 
+[node name="Room3" parent="Ship/Rooms" instance=ExtResource( 2 )]
+position = Vector2( 320, 0 )
+
 [node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
+position = Vector2( -320, 0 )
+
+[node name="Room5" parent="Ship/Rooms" instance=ExtResource( 8 )]
+
+[node name="Room6" parent="Ship/Rooms" instance=ExtResource( 6 )]
+position = Vector2( 320, 192 )
+
+[node name="Room7" parent="Ship/Rooms" instance=ExtResource( 7 )]
+position = Vector2( 0, 192 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 1008, 64 )
-
-[node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 320, 200 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="BackgroundPlanets" parent="Viewport" instance=ExtResource( 15 )]
+position = Vector2( 1027.03, 60.1541 )

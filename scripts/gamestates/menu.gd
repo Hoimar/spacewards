@@ -11,6 +11,9 @@ enum STATE {
 }
 
 var _state: int = STATE.Main
+var audio_bus_master: int = AudioServer.get_bus_index("Master")
+var audio_bus_music: int = AudioServer.get_bus_index("Music")
+var audio_bus_sound: int = AudioServer.get_bus_index("Sound")
 
 
 func _set_state(var new):
@@ -46,3 +49,15 @@ func _on_ButtonBack_pressed():
 
 func _on_ButtonWildcards_pressed():
 	_set_state(STATE.Wildcards)
+
+
+func _on_HSliderMaster_value_changed(value):
+	AudioServer.set_bus_volume_db(audio_bus_master, linear2db(value))
+
+
+func _on_HSliderMusic_value_changed(value):
+	AudioServer.set_bus_volume_db(audio_bus_music, linear2db(value))
+
+
+func _on_HSliderSound_value_changed(value):
+	AudioServer.set_bus_volume_db(audio_bus_sound, linear2db(value))

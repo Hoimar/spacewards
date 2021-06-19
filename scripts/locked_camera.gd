@@ -14,7 +14,7 @@ func _ready():
 	global_position = ((target.global_position + ROOM_HALF_SIZE) / ROOM_SIZE).floor() * ROOM_SIZE
 
 
-func _process(var delta: float):
+func _process(_delta):
 	if tween.is_active():
 		return
 	var dist := target.global_position - global_position

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Transparent window.png-5114579a44f2c42ae3dbdadc61ecf63f.stex"
+path="res://.import/stars background.png-1333da8e73fdc9c99235464686d77a61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/Decals/Transparent window.png"
-dest_files=[ "res://.import/Transparent window.png-5114579a44f2c42ae3dbdadc61ecf63f.stex" ]
+source_file="res://assets/graphics/stars background.png"
+dest_files=[ "res://.import/stars background.png-1333da8e73fdc9c99235464686d77a61.stex" ]
 
 [params]
 

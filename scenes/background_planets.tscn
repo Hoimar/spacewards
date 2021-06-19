@@ -1,23 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/background_planets.gd" type="Script" id=1]
 [ext_resource path="res://assets/graphics/sun_corona.png" type="Texture" id=2]
 [ext_resource path="res://assets/graphics/planet texture.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
-params_diffuse_mode = 2
-albedo_color = Color( 0.287147, 0.32, 0.1408, 1 )
+params_diffuse_mode = 4
+params_specular_mode = 4
+albedo_color = Color( 0.19329, 0.280273, 0.0317497, 1 )
 albedo_texture = ExtResource( 3 )
+roughness = 0.73
 
 [sub_resource type="SphereMesh" id=2]
 material = SubResource( 1 )
-
-[sub_resource type="SpatialMaterial" id=3]
-flags_unshaded = true
-albedo_color = Color( 1, 0.941176, 0.564706, 1 )
-
-[sub_resource type="SphereMesh" id=4]
-material = SubResource( 3 )
 radius = 1.5
 height = 3.0
 
@@ -25,28 +20,25 @@ height = 3.0
 script = ExtResource( 1 )
 
 [node name="Planet" type="MeshInstance" parent="."]
-transform = Transform( -0.180063, 0.614539, 0.768062, -0.140268, -0.788887, 0.598317, 0.973603, 4.47035e-08, 0.228249, 0, 0, 0 )
+transform = Transform( -0.0802185, 0.124825, -0.988931, 0.996771, 0.00651055, -0.0800328, -0.00355159, -0.992157, -0.124944, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="SunPivot" type="Spatial" parent="."]
-transform = Transform( -0.681997, 0, 0.731352, 0, 1, 0, -0.731352, 0, -0.681997, 0, 0, 0 )
+transform = Transform( 0.999998, 0, -1.74845e-07, 0, 1, 0, 1.74845e-07, 0, 0.999998, 0, 0, 0 )
 
 [node name="SunGroup" type="Spatial" parent="SunPivot"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.5 )
-
-[node name="Sun" type="MeshInstance" parent="SunPivot/SunGroup"]
-visible = false
-mesh = SubResource( 4 )
-material/0 = null
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="SunPivot/SunGroup"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+light_color = Color( 1, 0.937255, 0.905882, 1 )
+light_specular = 1.0
 
 [node name="Sprite3D" type="Sprite3D" parent="SunPivot/SunGroup"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 modulate = Color( 1, 0.984314, 0.866667, 1 )
-pixel_size = 0.02
+pixel_size = 0.03
+axis = 1
 texture = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]

@@ -11,6 +11,5 @@ func _ready():
 
 func _on_Area2D_body_entered(var body: Node2D):
 	if body is Player:
-		print("consumed ", self)
 		body.consume_carrot(CRISPNESS)
 		queue_free()

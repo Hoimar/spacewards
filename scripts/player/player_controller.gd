@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _process(delta):
+func _process(_delta):
 	target.set_facing(0)
 	
 	if target.is_on_floor() and fsm.state_name == "Falling":

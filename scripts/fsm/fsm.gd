@@ -14,11 +14,11 @@ func _ready():
 	state_name = state.name
 
 
-func _process(var delta: float):
+func _process(delta):
 	state.tick(delta)
 
 
-func _physics_process(var delta: float):
+func _physics_process(delta):
 	state.physics_tick(delta)
 
 

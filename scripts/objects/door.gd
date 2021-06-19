@@ -1,11 +1,10 @@
 extends Switchable
 
+onready var collision_shape := $StaticBody2D/CollisionShape2D
 onready var animation_player := $AnimationPlayer
 
+
 func on_activated():
-	if animation_player.is_playing():
-		return
-	
 	if active:
 		animation_player.play("open")
 	else:
