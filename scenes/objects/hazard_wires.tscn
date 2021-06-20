@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/graphics/hazards/wires.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 12 )
+extents = Vector2( 6.00951, 9.5 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -78,5 +78,5 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 16 )
-frame = 2
+frame = 8
 playing = true

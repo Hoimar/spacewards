@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/room_boosting_over_hazards.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/shaders/fog.shader" type="Shader" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://scenes/background_planets_2d.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/rooms/room_base_scene.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/world.gd" type="Script" id=17]
 [ext_resource path="res://scenes/rooms/room_start.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/rooms/room_tutorial_carrots.tscn" type="PackedScene" id=19]
@@ -20,7 +21,7 @@ viewport_path = NodePath("Viewport")
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 9 )
-shader_param/color = Color( 0.419608, 0.552941, 0.635294, 1 )
+shader_param/color = Color( 0.454902, 0.533333, 0.576471, 1 )
 shader_param/frequency = 15.0
 shader_param/OCTAVES = 4
 
@@ -63,7 +64,7 @@ position = Vector2( 640, 0 )
 position = Vector2( 320, 0 )
 
 [node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
-position = Vector2( -320, 0 )
+position = Vector2( 320, 648 )
 
 [node name="Room5" parent="Ship/Rooms" instance=ExtResource( 8 )]
 
@@ -71,7 +72,10 @@ position = Vector2( -320, 0 )
 position = Vector2( 320, 192 )
 
 [node name="Room7" parent="Ship/Rooms" instance=ExtResource( 7 )]
-position = Vector2( 0, 192 )
+position = Vector2( 0, 208 )
+
+[node name="Room8" parent="Ship/Rooms" instance=ExtResource( 12 )]
+position = Vector2( 368, 424 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
 position = Vector2( 957.825, 61.0693 )

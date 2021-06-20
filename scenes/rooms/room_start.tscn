@@ -18,6 +18,7 @@ texture = ExtResource( 5 )
 
 [node name="Body_2" type="Sprite" parent="Background" index="1"]
 position = Vector2( -8.85406, -24.1336 )
+rotation = -0.380482
 texture = ExtResource( 6 )
 
 [node name="tube2" type="Sprite" parent="Background" index="2"]
