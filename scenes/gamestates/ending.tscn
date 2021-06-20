@@ -8,7 +8,7 @@
 [node name="RunningTextPart" parent="RunningTextBox" index="3" instance=ExtResource( 5 )]
 text = "We made it! My friend is in safety and we can return home.
 
-You watch the crescent sun as your thrusters come to life and you blast Spacewards.
+As you watch the crescent sun the thrusters come to life and you blast Spacewards.
 
 » The End «"
 

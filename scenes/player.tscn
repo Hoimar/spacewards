@@ -224,7 +224,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 4.19228, 12.5831 )
+extents = Vector2( 4, 13 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -296,7 +296,6 @@ color_ramp = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 42 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Body"]
@@ -307,7 +306,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.250282, 3.41827 )
+position = Vector2( 0, 3 )
 shape = SubResource( 43 )
 
 [node name="Label" type="Label" parent="."]

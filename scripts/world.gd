@@ -6,7 +6,7 @@ var current_room: Node setget set_current_room
 
 
 func _ready():
-	Global.connect("restart_room", self, "reset_room")
+	Global.connect("restart_room", self, "reset_room", [], CONNECT_DEFERRED)
 
 
 func reset_room():

@@ -28,7 +28,7 @@ onready var room_enter_state = {
 
 func _ready():
 	jetpack_particles.emitting = false
-	Global.connect("restart_room", self, "_on_room_restarted")
+	Global.connect("restart_room", self, "_on_room_restarted", [], CONNECT_DEFERRED)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
