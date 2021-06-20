@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/gamestates/cutscene.gd" type="Script" id=1]
+[ext_resource path="res://assets/music/Track 3.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/ui/running_text_box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/graphics/Rescue Spaceship.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/stars background.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scroll_stars"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BackgroundStars1:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -960, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BackgroundStars2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Cutscene" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.6727
+margin_top = -0.8909
+margin_right = -2.67273
+margin_bottom = -0.890869
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+autoplay = true
+bus = "Music"
+
+[node name="BackgroundStars1" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -556.8
+margin_right = -556.8
+margin_bottom = -6.10352e-05
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundStars2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 403.2
+margin_right = 403.198
+margin_bottom = -6.10352e-05
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipSprite" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -280.5
+margin_top = -301.0
+margin_right = 280.5
+margin_bottom = -40.0
+texture = ExtResource( 6 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RunningTextBox" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
+anchor_left = 0.4
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -250.162
+margin_right = 210.0
+margin_bottom = 7.83777
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/scroll_stars = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -40.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 75.0
+margin_bottom = 35.0
+text = "Skip..."
+
+[connection signal="finished" from="RunningTextBox" to="." method="_on_RunningTextBox_finished"]
+[connection signal="pressed" from="MarginContainer/LinkButton" to="." method="_on_LinkButton_pressed"]

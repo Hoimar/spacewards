@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Elektra_Records,_Morse_Code_Transmission.ogg-470516e43e3de073ab1ef066ab31ee22.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Elektra_Records,_Morse_Code_Transmission.ogg"
+dest_files=[ "res://.import/Elektra_Records,_Morse_Code_Transmission.ogg-470516e43e3de073ab1ef066ab31ee22.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

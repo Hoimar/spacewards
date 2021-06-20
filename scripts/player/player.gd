@@ -4,17 +4,18 @@ extends KinematicBody2D
 signal carrot_consumed(crispness)
 signal hit
 
-const WALK_FRICTION    := 0.82
+const WALK_FRICTION    := 0.7
 const WALK_SPEEDUP     := 10.0
 const WALKING_TRESHOLD := 1.0   # How slow player may be before stopping.
-const JUMP_VELOCITY    := -300.0
-const MAX_SPEED_X      := 100.0
+const JUMP_VELOCITY    := -310.0
+const MAX_SPEED_X      := 90.0
 const MAX_FALL_SPEED   := 300.0
 
 onready var body: Node2D = $Body
 onready var animated_sprite: AnimatedSprite = $Body/AnimatedSprite
 onready var jetpack_particles: CPUParticles2D = $Body/CPUParticles2D
 onready var fsm: Fsm = $Fsm
+onready var collision_shape := $CollisionShape2D
 
 var facing: int setget set_facing   # -1 or 1
 var velocity := Vector2.ZERO
@@ -73,9 +74,11 @@ func on_room_entered(var room: Node):
 
 
 func _on_room_restarted():
+	collision_shape.disabled = true
 	var world: TheWorld = get_tree().get_nodes_in_group("world")[0]
 	global_position = room_enter_state["position"]
 	fsm.set_state("Idle")
 	fsm.get_node("Boosting").boosts_count = room_enter_state["boosts"]
 	velocity = Vector2.ZERO
+	collision_shape.disabled = false
 	#print("Restarted in ", world.current_room, ": ", room_enter_state)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TextboxBloop8-Bit.ogg-41ab0805de61518ed6a90c070c34e440.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/TextboxBloop8-Bit.ogg"
+dest_files=[ "res://.import/TextboxBloop8-Bit.ogg-41ab0805de61518ed6a90c070c34e440.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

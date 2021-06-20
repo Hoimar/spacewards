@@ -15,14 +15,14 @@ func _ready():
 func _process(_delta):
 	target.set_facing(0)
 	
+	if fsm.state_name == "Dying":
+		return
+	
 	if target.is_on_floor() and fsm.state_name == "Falling":
 		fsm.set_state("Landing")
 	
 	if enable_key_input:
 		_process_input()
-	
-	if fsm.state_name == "Dying":
-		return
 	
 	if     target.velocity.y > 0 \
 	   and not target.is_on_floor() \
@@ -56,7 +56,6 @@ func jump():
 	   or fsm.state_name == "Boosting" \
 	   or fsm.state_name == "Landing":
 		return
-	
 	fsm.set_state("Jumping")
 
 
@@ -73,5 +72,4 @@ func walk(var facing: int):
 	   or fsm.state_name == "Jumping" \
 	   or fsm.state_name == "Landing":
 		return
-	
 	fsm.set_state("Walking")

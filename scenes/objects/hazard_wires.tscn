@@ -1,10 +1,21 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/objects/hazard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/graphics/hazards/wires.png" type="Texture" id=2]
 
+[sub_resource type="GDScript" id=17]
+script/source = "extends Hazard
+
+onready var animated_sprite := $AnimatedSprite
+
+
+func _ready():
+	var frame: int = randi() % animated_sprite.frames.get_frame_count(\"default\")
+	animated_sprite.frame = frame
+"
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.00951, 9.5 )
+extents = Vector2( 8, 12 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -71,6 +82,7 @@ animations = [ {
 } ]
 
 [node name="Wires" instance=ExtResource( 1 )]
+script = SubResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2( 0, 4 )
@@ -78,5 +90,8 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 16 )
-frame = 8
+frame = 7
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}

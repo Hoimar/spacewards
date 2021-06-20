@@ -7,9 +7,6 @@ const POPUP := preload("res://scenes/gamestates/popup_menu.tscn")
 const MENU := preload("res://scenes/gamestates/menu.tscn")
 const SCENE_TRANSITIONER := preload("res://scenes/gamestates/scene_transitioner.tscn")
 
-const LEVELS := "res://scenes/levels/level%d.tscn"
-const CUTSCENES := "res://scenes/cutscenes/%s.tscn"
-
 const GRAVITY := 30.0
 
 const GAME_SEQUENCE = [
@@ -34,12 +31,12 @@ enum STATE {
 
 signal restart_room
 
-var level: int = 0
 var state: int = STATE.Menu
 var gravity := GRAVITY
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
+	OS.min_window_size = OS.window_size
 
 
 func _process(_delta):

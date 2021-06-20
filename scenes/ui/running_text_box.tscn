@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/ui/running_text_box.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/Elektra_Records,_Morse_Code_Transmission.ogg" type="AudioStream" id=2]
+
+[node name="RunningTextBox" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 953.0
+margin_bottom = 593.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="LabelText" type="RichTextLabel" parent="PanelContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 936.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_text = "The text.
+
+Line break.
+
+End."
+text = "The text.
+
+Line break.
+
+End."
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Sound"
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

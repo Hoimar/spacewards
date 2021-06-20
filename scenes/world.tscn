@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/shaders/fog.shader" type="Shader" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://scenes/background_planets_2d.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/rooms/room_base_scene.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/rooms/room_downwards_shaft.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/world.gd" type="Script" id=17]
 [ext_resource path="res://scenes/rooms/room_start.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/rooms/room_tutorial_carrots.tscn" type="PackedScene" id=19]
@@ -30,22 +30,17 @@ shader_param/OCTAVES = 4
 ]]
 script = ExtResource( 17 )
 
-[node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 960, 600 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="BackgroundPlanets" parent="Viewport" instance=ExtResource( 11 )]
-
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 target_path = NodePath("../Ship/Player")
 
 [node name="stars background" type="Sprite" parent="Camera2D"]
 texture = ExtResource( 4 )
 
+[node name="BackgroundPlanets" parent="Camera2D" instance=ExtResource( 11 )]
+
 [node name="ViewportSpritePlanets" type="Sprite" parent="Camera2D"]
 process_priority = 1
+visible = false
 light_mask = 0
 texture = SubResource( 1 )
 flip_v = true
@@ -63,22 +58,22 @@ position = Vector2( 640, 0 )
 [node name="Room3" parent="Ship/Rooms" instance=ExtResource( 2 )]
 position = Vector2( 320, 0 )
 
-[node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
-position = Vector2( 320, 648 )
-
 [node name="Room5" parent="Ship/Rooms" instance=ExtResource( 8 )]
 
 [node name="Room6" parent="Ship/Rooms" instance=ExtResource( 6 )]
 position = Vector2( 320, 192 )
 
 [node name="Room7" parent="Ship/Rooms" instance=ExtResource( 7 )]
-position = Vector2( 0, 208 )
+position = Vector2( 0, 192 )
 
-[node name="Room8" parent="Ship/Rooms" instance=ExtResource( 12 )]
-position = Vector2( 368, 424 )
+[node name="Room9" parent="Ship/Rooms" instance=ExtResource( 12 )]
+position = Vector2( 320, 384 )
+
+[node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
+position = Vector2( 320, 576 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 957.825, 61.0693 )
+position = Vector2( 316.937, 371.726 )
 
 [node name="FogOverlay" type="Sprite" parent="Ship"]
 material = SubResource( 2 )

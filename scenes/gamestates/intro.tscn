@@ -1,39 +1,50 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scripts/gamestates/intro.gd" type="Script" id=1]
-[ext_resource path="res://assets/music/Track 3.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/gamestates/cutscene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/running_text_part.tscn" type="PackedScene" id=5]
 
-[node name="Intro" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 3 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Intro" instance=ExtResource( 1 )]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -4.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ShipSprite" parent="." index="3"]
+flip_h = true
 
-[node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 145.0
-margin_top = 253.0
-margin_right = 815.0
-margin_bottom = 342.0
+[node name="RunningTextPart" parent="RunningTextBox" index="3" instance=ExtResource( 5 )]
 text = "\"You shall always keep an eye on the screen, kid.\" Grandpa told me.
-\"I'm already old and soon I will not be around anymore.
-If someone calls for help, we need eyes on the monitor.
-I'm sure we're not the last humans on this god-forsaken galaxy\"."
-align = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 2 )
-autoplay = true
-bus = "Music"
+\"I'm already old and soon I will not be around anymore.
+
+If someone calls for help, we need eyes on the monitor.
+It's been a long time since it last came to life, but I'm sure we're not the last humans in this god-forsaken galaxy.\""
+
+[node name="RunningTextPart2" parent="RunningTextBox" index="4" instance=ExtResource( 5 )]
+text = "I'd been floating through space for what feels like ages with nothing to do. Being a galaxy guardian was lame.
+      	  
+But then it happened. I got a distress signal from a ship.
+"
+
+[node name="RunningTextPart3" parent="RunningTextBox" index="5" instance=ExtResource( 5 )]
+text = "– INCOMING TRANSMISSION –
+DATE: 06/21/2121
+SOURCE: SS Monolith
+LOCATION: Proxima Centauri B
+MESSAGE:
+SOS! SOS! Ship under attack! Need help urgently. Under attack from unknown lifeforms.
+SOS!
+– TRANSMISSION END –"
+
+[node name="RunningTextPart6" parent="RunningTextBox" index="6" instance=ExtResource( 5 )]
+text = "\"SS Monolith? I know that one! That's the ship my friend is on!\"
+
+Quickly I set off and enabled my hyperdrive."
+
+[node name="RunningTextPart4" parent="RunningTextBox" index="7" instance=ExtResource( 5 )]
+text = "Upon arriving I was met with utter destruction and chaos.
+
+Some alien lifeforms seemed to have ransacked the ship, leaving nobody alive.
+
+Nobody? I heard distant noises from a storage module."
+
+[node name="RunningTextPart5" parent="RunningTextBox" index="8" instance=ExtResource( 5 )]
+text = "A survivor! And it was my friend!
+
+Now we need to leave this mess before everything blows up..."

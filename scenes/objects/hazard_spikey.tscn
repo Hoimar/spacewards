@@ -4,12 +4,12 @@
 [ext_resource path="res://assets/graphics/hazards/spiky.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.52392, 3.30439 )
+extents = Vector2( 6, 3 )
 
 [node name="Spikey" instance=ExtResource( 1 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 0.629957, 4.66927 )
+position = Vector2( 0, 5 )
 shape = SubResource( 1 )
 
 [node name="spiky" type="Sprite" parent="." index="1"]

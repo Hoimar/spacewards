@@ -2,7 +2,7 @@ extends Camera2D
 
 const ROOM_SIZE := Vector2(320, 200)
 const ROOM_HALF_SIZE := ROOM_SIZE / 2
-const DURATION := 1.0
+const DURATION := 0.6
 
 export var target_path: NodePath
 onready var target: Node2D = get_node(target_path)

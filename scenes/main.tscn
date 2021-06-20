@@ -5,5 +5,3 @@
 [node name="Main" type="Node"]
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
-margin_left = 2.0
-margin_right = 2.0
