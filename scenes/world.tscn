@@ -55,6 +55,12 @@ flip_v = true
 
 [node name="Rooms" type="Node2D" parent="Ship"]
 
+[node name="Room14" parent="Ship/Rooms" instance=ExtResource( 21 )]
+position = Vector2( 1600, 192 )
+
+[node name="Room13" parent="Ship/Rooms" instance=ExtResource( 20 )]
+position = Vector2( 1280, 192 )
+
 [node name="Room" parent="Ship/Rooms" instance=ExtResource( 18 )]
 position = Vector2( 1600, 0 )
 
@@ -84,20 +90,14 @@ position = Vector2( 0, 192 )
 [node name="Room9" parent="Ship/Rooms" instance=ExtResource( 12 )]
 position = Vector2( 1600, 400 )
 
-[node name="Room14" parent="Ship/Rooms" instance=ExtResource( 21 )]
-position = Vector2( 1600, 192 )
-
 [node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
 position = Vector2( 1600, 608 )
 
 [node name="Room8" parent="Ship/Rooms" instance=ExtResource( 13 )]
 position = Vector2( 320, 0 )
 
-[node name="Room13" parent="Ship/Rooms" instance=ExtResource( 20 )]
-position = Vector2( 1280, 192 )
-
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 448, 248 )
+position = Vector2( 432, 224 )
 
 [node name="FogOverlay" type="Sprite" parent="Ship"]
 material = SubResource( 2 )

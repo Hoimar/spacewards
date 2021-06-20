@@ -66,35 +66,35 @@ region = Rect2( 96, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 0, 192, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 160, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 160, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 160, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 160, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 2 )
@@ -142,19 +142,19 @@ region = Rect2( 320, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 0, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 32, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 192, 32, 32 )
+region = Rect2( 96, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 2 )
@@ -192,14 +192,19 @@ animations = [ {
 "name": "jump_walking",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 13 ) ],
+"loop": false,
+"name": "falling",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": false,
 "name": "jump_standing",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": false,
-"name": "boosting",
+"name": "landing",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
@@ -207,14 +212,9 @@ animations = [ {
 "name": "dying",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": false,
-"name": "landing",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 35 ) ],
-"loop": false,
-"name": "falling",
+"name": "boosting",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
@@ -224,7 +224,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 5, 13 )
+extents = Vector2( 4.19228, 12.5831 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -296,7 +296,7 @@ color_ramp = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 42 )
 animation = "idle"
-frame = 5
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Body"]
@@ -307,7 +307,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( -0.250282, 3.41827 )
 shape = SubResource( 43 )
 
 [node name="Label" type="Label" parent="."]
