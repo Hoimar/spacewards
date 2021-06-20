@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/room_boosting_over_hazards.tscn" type="PackedScene" id=2]
@@ -13,7 +13,7 @@
 [ext_resource path="res://scenes/background_planets_2d.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/rooms/room_downwards_shaft.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/rooms/room_two_switches.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/rooms/room_noname1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/rooms/room_zig_zag.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/rooms/Room10.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/rooms/Room12.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scripts/world.gd" type="Script" id=17]
@@ -22,10 +22,7 @@
 [ext_resource path="res://scenes/rooms/RoomSPIKEY.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/rooms/RoomPREFINAL.tscn" type="PackedScene" id=21]
 
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("Viewport")
-
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 9 )
 shader_param/color = Color( 0.454902, 0.533333, 0.576471, 1 )
 shader_param/frequency = 17.0
@@ -42,13 +39,6 @@ target_path = NodePath("../Ship/Player")
 texture = ExtResource( 4 )
 
 [node name="BackgroundPlanets" parent="Camera2D" instance=ExtResource( 11 )]
-
-[node name="ViewportSpritePlanets" type="Sprite" parent="Camera2D"]
-process_priority = 1
-visible = false
-light_mask = 0
-texture = SubResource( 1 )
-flip_v = true
 
 [node name="Ship" type="Node2D" parent="."]
 
@@ -99,7 +89,7 @@ position = Vector2( 320, 0 )
 position = Vector2( 1552, 32 )
 
 [node name="FogOverlay" type="Sprite" parent="Ship"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 800, 128 )
 scale = Vector2( 6, 6 )
 z_index = 11

@@ -5,8 +5,8 @@
 [ext_resource path="res://scenes/ui/input_remap_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/graphics/wildcards.png" type="Texture" id=4]
 [ext_resource path="res://assets/music/Track 1.ogg" type="AudioStream" id=5]
-[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=6]
-[ext_resource path="res://assets/graphics/SPACEWARDS BG.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/ui_theme.tres" type="Theme" id=6]
+[ext_resource path="res://assets/graphics/spacewards menu background.jpg" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "to_settings"
@@ -51,6 +51,20 @@ __meta__ = {
 anims/to_settings = SubResource( 1 )
 anims/to_wildcards = SubResource( 2 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="BackgroundLogo" type="TextureRect" parent="Camera2D"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 960.0
+margin_bottom = 600.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -66,14 +80,6 @@ margin_right = 960.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/ContainerWildcards"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.996078, 0.917647, 0.933333, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -153,14 +159,6 @@ margin_right = 1920.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackgroundLogo" type="TextureRect" parent="HBoxContainer/ContainerMain"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -268,14 +266,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/ContainerSettings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.996078, 0.917647, 0.933333, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ContainerSettings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -329,7 +319,7 @@ text = "Master volume: "
 [node name="HSliderMaster" type="HSlider" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridSettings"]
 margin_left = 155.0
 margin_right = 420.0
-margin_bottom = 16.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
@@ -345,7 +335,7 @@ text = "Music volume: "
 margin_left = 155.0
 margin_top = 30.0
 margin_right = 420.0
-margin_bottom = 46.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
@@ -361,7 +351,7 @@ text = "Sound volume: "
 margin_left = 155.0
 margin_top = 60.0
 margin_right = 420.0
-margin_bottom = 76.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
@@ -377,71 +367,71 @@ custom_constants/hseparation = 10
 columns = 2
 
 [node name="LabelJump" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 3.0
+margin_top = 2.0
 margin_right = 60.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 text = "Jump:"
 
 [node name="ButtonJump" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
 margin_left = 70.0
 margin_right = 420.0
-margin_bottom = 26.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 action = "ui_up"
 
 [node name="LabelLeft" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 39.0
+margin_top = 36.0
 margin_right = 60.0
-margin_bottom = 59.0
+margin_bottom = 56.0
 text = "Left:"
 
 [node name="ButtonLeft" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
 margin_left = 70.0
-margin_top = 36.0
+margin_top = 34.0
 margin_right = 420.0
-margin_bottom = 62.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 action = "ui_left"
 
 [node name="LabelRight" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 75.0
+margin_top = 70.0
 margin_right = 60.0
-margin_bottom = 95.0
+margin_bottom = 90.0
 text = "Right:"
 
 [node name="ButtonRight" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
 margin_left = 70.0
-margin_top = 72.0
+margin_top = 68.0
 margin_right = 420.0
-margin_bottom = 98.0
+margin_bottom = 92.0
 size_flags_horizontal = 3
 action = "ui_right"
 
 [node name="LabelBoost" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 111.0
+margin_top = 104.0
 margin_right = 60.0
-margin_bottom = 131.0
+margin_bottom = 124.0
 text = "Boost:"
 
 [node name="ButtonBoost" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
 margin_left = 70.0
-margin_top = 108.0
+margin_top = 102.0
 margin_right = 420.0
-margin_bottom = 134.0
+margin_bottom = 126.0
 size_flags_horizontal = 3
 action = "ui_select"
 
 [node name="LabelPause" type="Label" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls"]
-margin_top = 147.0
+margin_top = 138.0
 margin_right = 60.0
-margin_bottom = 167.0
+margin_bottom = 158.0
 text = "Pause:"
 
 [node name="ButtonPause" parent="HBoxContainer/ContainerSettings/MarginContainer/VBoxContainer/HBoxContainer/GridControls" instance=ExtResource( 3 )]
 margin_left = 70.0
-margin_top = 144.0
+margin_top = 136.0
 margin_right = 420.0
-margin_bottom = 170.0
+margin_bottom = 160.0
 size_flags_horizontal = 3
 action = "pause"
 
@@ -452,10 +442,6 @@ margin_bottom = 500.0
 rect_min_size = Vector2( 80, 40 )
 size_flags_horizontal = 0
 text = "BACK"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-current = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

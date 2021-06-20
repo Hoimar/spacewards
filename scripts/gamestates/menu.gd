@@ -1,7 +1,5 @@
 extends GameState
 
-onready var _camera := $Camera2D
-onready var _anim_player := $AnimationPlayer
 
 enum STATE {
 	Main,
@@ -10,10 +8,19 @@ enum STATE {
 	Transitioning,
 }
 
+onready var _camera := $Camera2D
+onready var _anim_player := $AnimationPlayer
+onready var button_exit := $HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonExit
+
 var _state: int = STATE.Main
 var audio_bus_master: int = AudioServer.get_bus_index("Master")
 var audio_bus_music: int = AudioServer.get_bus_index("Music")
 var audio_bus_sound: int = AudioServer.get_bus_index("Sound")
+
+
+func _ready():
+	if OS.get_name() == "HTML5":
+		button_exit.disabled = true
 
 
 func _set_state(var new):

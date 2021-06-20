@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SPACEWARDS BG.png-b7b4fc192e8b77a39cc2d413c5a10cad.stex"
+path="res://.import/spacewards menu background.jpg-3742b31b019007e2f48b3bfac2c42aa3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/SPACEWARDS BG.png"
-dest_files=[ "res://.import/SPACEWARDS BG.png-b7b4fc192e8b77a39cc2d413c5a10cad.stex" ]
+source_file="res://assets/graphics/spacewards menu background.jpg"
+dest_files=[ "res://.import/spacewards menu background.jpg-3742b31b019007e2f48b3bfac2c42aa3.stex" ]
 
 [params]
 

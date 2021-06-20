@@ -1,6 +1,7 @@
 # gwj34
 Our Godot Wild Jam #34 submission.
 
+Play it here: https://hoimar.itch.io/spacewards
 
 ## Credits
 
