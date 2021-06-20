@@ -3,7 +3,7 @@ extends Node
 
 
 export(String, MULTILINE) var text: String
-export var speed: float = 30.0   # Characters per second.
+export var speed: float = 40.0   # Characters per second.
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,6 +1,7 @@
 class_name Switchable
 extends Node
 
+var activated: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +13,4 @@ func switch():
 
 
 func on_activated():
-	pass
+	activated = true
