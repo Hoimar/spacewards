@@ -22,7 +22,7 @@ viewport_path = NodePath("Viewport")
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 9 )
 shader_param/color = Color( 0.454902, 0.533333, 0.576471, 1 )
-shader_param/frequency = 15.0
+shader_param/frequency = 17.0
 shader_param/OCTAVES = 4
 
 [node name="World" type="Node2D" groups=[
@@ -73,7 +73,7 @@ position = Vector2( 320, 384 )
 position = Vector2( 320, 576 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 316.937, 371.726 )
+position = Vector2( 176, 224 )
 
 [node name="FogOverlay" type="Sprite" parent="Ship"]
 material = SubResource( 2 )

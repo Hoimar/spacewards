@@ -8,7 +8,7 @@ const WALK_FRICTION    := 0.7
 const WALK_SPEEDUP     := 10.0
 const WALKING_TRESHOLD := 1.0   # How slow player may be before stopping.
 const JUMP_VELOCITY    := -310.0
-const MAX_SPEED_X      := 90.0
+const MAX_SPEED_X      := 80.0
 const MAX_FALL_SPEED   := 300.0
 
 onready var body: Node2D = $Body

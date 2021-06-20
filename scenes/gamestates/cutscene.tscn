@@ -115,18 +115,24 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -80.0
-margin_top = -40.0
+margin_top = -30.0001
+margin_bottom = -6.10352e-05
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
 custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer"]
-margin_left = 5.0
+margin_left = 25.0
 margin_top = 5.0
 margin_right = 75.0
-margin_bottom = 35.0
-text = "Skip..."
+margin_bottom = 25.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Skip…"
 
 [connection signal="finished" from="RunningTextBox" to="." method="_on_RunningTextBox_finished"]
 [connection signal="pressed" from="MarginContainer/LinkButton" to="." method="_on_LinkButton_pressed"]

@@ -274,7 +274,7 @@ playing = true
 current = true
 
 [node name="SunPivot" type="Node2D" parent="."]
-rotation = 8.03608
+rotation = 8.18414
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="SunPivot"]
 light_mask = 0
