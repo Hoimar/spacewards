@@ -77,16 +77,16 @@ position = Vector2( 320, 192 )
 position = Vector2( 0, 192 )
 
 [node name="Room9" parent="Ship/Rooms" instance=ExtResource( 12 )]
-position = Vector2( 1600, 384 )
+position = Vector2( 1600, 400 )
 
 [node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
-position = Vector2( 1600, 576 )
+position = Vector2( 1600, 592 )
 
 [node name="Room8" parent="Ship/Rooms" instance=ExtResource( 13 )]
 position = Vector2( 320, 0 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 1552, 32 )
+position = Vector2( 1152, 240 )
 
 [node name="FogOverlay" type="Sprite" parent="Ship"]
 material = SubResource( 1 )

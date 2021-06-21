@@ -57,8 +57,11 @@ tile_data = PoolIntArray( -393226, 5, 0, -393225, 5, 1, -393224, 5, 1, -393223, 
 [node name="Carrot" parent="Foreground" index="0" instance=ExtResource( 9 )]
 position = Vector2( -72, 32 )
 
-[node name="Spikey" parent="Foreground" index="1" instance=ExtResource( 2 )]
+[node name="Carrot2" parent="Foreground" index="1" instance=ExtResource( 9 )]
+position = Vector2( 128, 64 )
+
+[node name="Spikey" parent="Foreground" index="2" instance=ExtResource( 2 )]
 position = Vector2( -24, 72 )
 
-[node name="Spikey2" parent="Foreground" index="2" instance=ExtResource( 2 )]
+[node name="Spikey2" parent="Foreground" index="3" instance=ExtResource( 2 )]
 position = Vector2( -8, 72 )
