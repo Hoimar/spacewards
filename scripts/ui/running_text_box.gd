@@ -1,8 +1,8 @@
 tool
 extends Control
 
-const PITCH_MIN := 0.85
-const PITCH_MAX := 0.9
+const PITCH_MIN := 0.8
+const PITCH_MAX := 0.85
 
 enum STATE {
 	RUNNING_TEXT,
@@ -40,7 +40,7 @@ func _process(_delta):
 			show_next_part()
 	if state == STATE.RUNNING_TEXT and not sfx.is_playing():
 		sfx.pitch_scale = rand_range(PITCH_MIN, PITCH_MAX)
-		sfx.play()
+		sfx.play(randf() * sfx.stream.get_length())
 
 
 func show_next_part():

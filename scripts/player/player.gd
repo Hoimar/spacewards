@@ -20,19 +20,15 @@ onready var collision_shape := $CollisionShape2D
 var facing: int setget set_facing   # -1 or 1
 var velocity := Vector2.ZERO
 
-onready var room_enter_state = {
-	"position": global_position,
-	"boosts"  : fsm.get_node("Boosting").boosts_count,
-}
-
 
 func _ready():
 	jetpack_particles.emitting = false
-	Global.connect("restart_room", self, "_on_room_restarted", [], CONNECT_DEFERRED)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
+	if fsm.state_name == "Restarting":
+		return
 	# Apply gravity.
 	velocity.y += Global.gravity
 	# Slow down?
@@ -50,7 +46,7 @@ func _physics_process(_delta):
 	if is_on_wall():
 		velocity.x = 0
 	# Debug.
-	#$Label.text = "%s | %s" % [fsm.state_name, velocity]
+	$Label.text = "%s | %s" % [fsm.state_name, velocity]
 
 
 func set_facing(var new: int):
@@ -64,21 +60,14 @@ func consume_carrot(var crispness: int):
 
 
 func take_hit():
+	if fsm.state_name == "Restarting":
+		return
 	emit_signal("hit")
 
 
-func on_room_entered(var room: Node):
-	room_enter_state["position"] = global_position
-	room_enter_state["boosts"] = fsm.get_node("Boosting").boosts_count
-	#print("Saving on entering ", room, ": ", room_enter_state)
+func get_boosts() -> int:
+	return fsm.get_node("Boosting").boosts_count
 
 
-func _on_room_restarted():
-	collision_shape.disabled = true
-	var world: TheWorld = get_tree().get_nodes_in_group("world")[0]
-	global_position = room_enter_state["position"]
-	fsm.set_state("Idle")
-	fsm.get_node("Boosting").boosts_count = room_enter_state["boosts"]
-	velocity = Vector2.ZERO
-	collision_shape.disabled = false
-	#print("Restarted in ", world.current_room, ": ", room_enter_state)
+func set_boosts(var new: int):
+	fsm.get_node("Boosting").boosts_count = new

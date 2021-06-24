@@ -10,13 +10,22 @@ onready var tween := $Tween
 
 
 func _ready():
-	#yield(target, "ready")
 	global_position = ((target.global_position + ROOM_HALF_SIZE) / ROOM_SIZE).floor() * ROOM_SIZE
 
 
 func _process(_delta):
 	if tween.is_active():
 		return
+	# Try to reacquire the new player.
+	if not target:
+		var nodes := get_tree().get_nodes_in_group("player")
+		if nodes.empty():
+			return
+		target = nodes[0]
+	elif not target.is_inside_tree():
+		target = null   # Unreference target.
+		return
+	
 	var dist := target.global_position - global_position
 	var next_pos := global_position
 	if dist.x > ROOM_HALF_SIZE.x:

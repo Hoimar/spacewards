@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/rooms/room_by_luke_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/rooms/room_star_observatory.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/shaders/fog.shader" type="Shader" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://assets/graphics/icon.png" type="Texture" id=10]
 [ext_resource path="res://scenes/background_planets_2d.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/rooms/room_downwards_shaft.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/rooms/room_two_switches.tscn" type="PackedScene" id=13]
@@ -22,10 +22,10 @@
 [ext_resource path="res://scenes/rooms/RoomSPIKEY.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/rooms/RoomPREFINAL.tscn" type="PackedScene" id=21]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 9 )
 shader_param/color = Color( 0.454902, 0.533333, 0.576471, 1 )
-shader_param/frequency = 17.0
+shader_param/frequency = 3.0
 
 [node name="World" type="Node2D" groups=[
 "world",
@@ -43,9 +43,6 @@ texture = ExtResource( 4 )
 [node name="Ship" type="Node2D" parent="."]
 
 [node name="Rooms" type="Node2D" parent="Ship"]
-
-[node name="Room14" parent="Ship/Rooms" instance=ExtResource( 21 )]
-position = Vector2( 1600, 192 )
 
 [node name="Room13" parent="Ship/Rooms" instance=ExtResource( 20 )]
 position = Vector2( 1280, 192 )
@@ -79,6 +76,9 @@ position = Vector2( 0, 192 )
 [node name="Room9" parent="Ship/Rooms" instance=ExtResource( 12 )]
 position = Vector2( 1600, 400 )
 
+[node name="Room14" parent="Ship/Rooms" instance=ExtResource( 21 )]
+position = Vector2( 1600, 192 )
+
 [node name="Room4" parent="Ship/Rooms" instance=ExtResource( 3 )]
 position = Vector2( 1600, 592 )
 
@@ -86,16 +86,13 @@ position = Vector2( 1600, 592 )
 position = Vector2( 320, 0 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 1 )]
-position = Vector2( 1152, 240 )
+position = Vector2( 1552, 32 )
 
-[node name="FogOverlay" type="Sprite" parent="Ship"]
-material = SubResource( 1 )
-position = Vector2( 800, 128 )
-scale = Vector2( 6, 6 )
-z_index = 11
+[node name="Polygon2D" type="Polygon2D" parent="Ship"]
+material = SubResource( 2 )
 texture = ExtResource( 10 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 320, 200 )
+polygon = PoolVector2Array( 1784, -120, 1784, 680, 1424, 680, 1424, 568, 1600, 568, 1600, 480, 1440, 480, 1440, 312, -168, 312, -168, -120 )
+uv = PoolVector2Array( 1788.76, -139.975, 1816.18, 747.441, -241.462, 828.614, -197.991, -141.473 )
 __meta__ = {
 "_edit_lock_": true
 }

@@ -63,10 +63,10 @@ func set_state(var new):
 			transition_to(ENDING)
 		STATE.Ingame:
 			get_tree().paused = false
-		STATE.Died, STATE.Pause:
+		STATE.Pause:
 			get_tree().paused = true
 			get_tree().get_root().add_child(POPUP.instance())
-		STATE.RestartRoom:
+		STATE.RestartRoom, STATE.Died:
 			emit_signal("restart_room")
 			set_state(STATE.Ingame)
 		STATE.Exiting:

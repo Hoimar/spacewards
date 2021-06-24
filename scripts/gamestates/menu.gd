@@ -10,7 +10,7 @@ enum STATE {
 
 onready var _camera := $Camera2D
 onready var _anim_player := $AnimationPlayer
-onready var button_exit := $HBoxContainer/ContainerMain/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonExit
+onready var button_exit := $HBoxContainer/ContainerMain/MarginContainer/HBoxContainer/VBoxContainer/ButtonExit
 
 var _state: int = STATE.Main
 var audio_bus_master: int = AudioServer.get_bus_index("Master")

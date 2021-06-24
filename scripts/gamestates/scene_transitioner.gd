@@ -24,9 +24,9 @@ func change_to_target_scene():
 		get_tree().change_scene_to(target_scene)
 	elif target_scene is String:
 		get_tree().change_scene(target_scene)
+	AudioServer.set_bus_volume_db(audio_bus_music, volume_start)
 	yield(get_tree(), "idle_frame")   # Await scene change.
 	get_viewport().move_child(self, self.get_position_in_parent()+1)
-	AudioServer.set_bus_volume_db(audio_bus_music, volume_start)
 
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
