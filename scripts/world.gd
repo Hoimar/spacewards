@@ -12,7 +12,7 @@ onready var player_enter_state = {
 }
 
 func _ready():
-	Global.connect("restart_room", self, "reset_room", [], CONNECT_DEFERRED)
+	Global.connect("restart_room", self, "reset_room")
 
 
 func reset_room():

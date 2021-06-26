@@ -17,12 +17,9 @@ margin_right = 959.998
 flip_h = true
 
 [node name="RunningTextPart" parent="RunningTextBox" index="3" instance=ExtResource( 5 )]
-text = "\"You shall always keep an eye on the screen, kid.\" Grandpa told me.
+text = "\"Listen, kid. I'm getting old. I won't always be around... And if someone calls, we need eyes on this room\", Grandpa told me.
 
-\"I'm already old and soon I will not be around anymore.
-
-If someone calls for help, we need eyes on the monitor.
-It's been a long time since it last came to life, but I'm sure we're not the last humans in this god-forsaken galaxy.\""
+\"So please, promise me you'll never take your eyes off that screen. Not until the day you die. No chance in hell we're the last humans in this god-forsaken galaxy.\""
 
 [node name="RunningTextPart2" parent="RunningTextBox" index="4" instance=ExtResource( 5 )]
 text = "I'd been floating through space for what feels like ages with nothing to do. Being a galaxy guardian was lame.

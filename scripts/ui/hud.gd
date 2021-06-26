@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 onready var label_boost_count := $MarginContainer/VBoxContainer/HBoxBoost/LabelBoostCount

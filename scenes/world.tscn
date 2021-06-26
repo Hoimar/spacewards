@@ -22,7 +22,7 @@
 [ext_resource path="res://scenes/rooms/RoomSPIKEY.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/rooms/RoomPREFINAL.tscn" type="PackedScene" id=21]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 9 )
 shader_param/color = Color( 0.454902, 0.533333, 0.576471, 1 )
 shader_param/frequency = 3.0
@@ -89,7 +89,7 @@ position = Vector2( 320, 0 )
 position = Vector2( 1552, 32 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Ship"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 texture = ExtResource( 10 )
 polygon = PoolVector2Array( 1784, -120, 1784, 680, 1424, 680, 1424, 568, 1600, 568, 1600, 480, 1440, 480, 1440, 312, -168, 312, -168, -120 )
 uv = PoolVector2Array( 1788.76, -139.975, 1816.18, 747.441, -241.462, 828.614, -197.991, -141.473 )
