@@ -1,5 +1,5 @@
-# gwj34
-Our Godot Wild Jam #34 submission.
+# Spacewards
+Our Godot Wild Jam #34 submission, a platforming adventure on an abandoned spaceship.
 
 Play it here: https://hoimar.itch.io/spacewards
 
